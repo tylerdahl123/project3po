@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
+import Cal from "./pages/Cal";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { Container, Col, Row } from "./components/Grid";
+import About from "./pages/About";
 
 
 function App() {
@@ -12,12 +14,11 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          <Route exact path="/" 
-            //if userlogin is false
-            component={Login}  
-            // if userlogin is true
-            component={Home} 
-          />                
+          <Container>
+            <Route exact path="/" component={Login} /> 
+            <Route exact path="cal" component={Cal} />   
+            <Route exact path="about" component={About} />         
+          </Container>
         </Switch>
         <Footer />        
       </div>

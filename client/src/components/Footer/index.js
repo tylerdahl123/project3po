@@ -1,10 +1,11 @@
-import React, {Component} from "react";
-import "./Footer.css";
+import React from 'react';
 
 export default function Footer(){
     return(
-        <div>
-            a footer
+    <div className="footer">    
+        <div className="container">
+            <p>The Calendar App, 2021</p>
         </div>
+    </div>    
     )
 }
