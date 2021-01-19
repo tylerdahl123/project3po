@@ -30,6 +30,7 @@ body {
   }
   
  .content-wrap {
+    padding-top: 1.5rem;
     padding-bottom: 2.5rem;    /* Footer height */
   }
   
@@ -49,4 +50,9 @@ body {
       margin: 0% auto;
       padding: 2 rem;
       background-color: palegoldenrod;
+  }
+
+  .login{
+      background-color: transparent;
+      font-size: large;
   }
