@@ -1,7 +1,16 @@
 import React from "react";
 
-export default function Calender(){
+
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from "@fullcalendar/daygrid"
+
+export default class Calendar extends React.Component{
+  render(){
     return(
-        <h1> This Is The Calendar </h1>
+      <FullCalendar 
+      plugins={[dayGridPlugin]}
+      initialView="dayGridMonth"
+      />
     )
+  }
 }
