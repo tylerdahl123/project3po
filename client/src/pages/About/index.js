@@ -1,11 +1,10 @@
 import React, {Component} from "react";
-import "./Home.css";
 import {Col, Row, Container} from "../../components/Grid";
 
-export default function Home(){
+export default function About(){
     return(
         <div>
-            the home page
+            the about page
         </div>
     )
 }
