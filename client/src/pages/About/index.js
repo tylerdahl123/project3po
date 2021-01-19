@@ -15,7 +15,7 @@ export default function About(){
                                 <br />
                                 <p> info about the project and concept go here </p>
                                 <br />
-                                <p> button here to go to sub-page that has about info for each of us (a photo, a hobby, github/linkedin link?)</p>
+                                <p> button here to show aboutus component</p>
                         </Col>
                     </Row>
                 </Container>

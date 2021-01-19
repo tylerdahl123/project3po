@@ -12,10 +12,11 @@ export default function Login(){
                                 <br />
                                 <br />   
                                 <div className="loginbox">
-                                login box here
+                                loginform here
                                 <br />
                                 <br />
-                                if create account, hide login box component and show create box
+                                if press button to create account, 
+                                hide login box component and show createform component
                                 <br />
                                 <br />
                                 have button switch from login to logout when login is successful
