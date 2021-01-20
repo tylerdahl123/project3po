@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Container>
             <Route exact path="/" component={Main} /> 
-            <Route path="/cal" component={Cal} />   
+            <Route path="/calendar" component={Cal} />   
             <Route path="/about" component={About} />
             <Route path="/login" component={Login} />        
           </Container>
