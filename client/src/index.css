@@ -1,89 +1,89 @@
 body {
-    background-color: rgb(243, 232, 232);
-    background-size: cover;  
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2rem;
-    background-image: url(https://www.adweek.com/wp-content/uploads/2020/03/behr-zoom-background-feature-2020-600x315.jpg);
-    background-attachment: fixed;
-  background-position: center;
-  }
-  
-  code {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  html,
-  body,
-  #root,
-  #root > div,
-  div[data-reactroot] {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
+  background-color: rgb(243, 232, 232);
+  background-size: cover;  
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+  background-image: url(https://www.adweek.com/wp-content/uploads/2020/03/behr-zoom-background-feature-2020-600x315.jpg);
+  background-attachment: fixed;
+background-position: center;
+}
+
+code {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#root > div,
+div[data-reactroot] {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 
 .page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
- .content-wrap {
-    padding-top: 1.5rem;
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-  
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
+  position: relative;
+  min-height: 100vh;
+}
 
-  .jumbotron{
-      margin: 3rem;
-      background-color: pink;
-  }
+.content-wrap {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;    /* Footer height */
+}
 
-  .loginbox{
-      margin: 0% auto;
-      padding: 2 rem;
-      background-color: palegoldenrod;
-  }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
 
-  .login{
-      background-color: transparent;      
-      border-radius: 3rem;
-  }
-
-  .createform,
-  .loginform{
-    padding: 2.5rem;
-    padding-bottom: 1rem;
-    margin: auto;
-  }
-
-  .createform{
-    background-color: lavender;
-  }
-  .loginform{
+.jumbotron{
+    margin: 3rem;
     background-color: pink;
-  }
+}
 
-  .submitbtn{
-    background-color: snow;
-    font-size: large;
-    border-radius: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.loginbox{
+    margin: 0% auto;
+    padding: 2 rem;
+    background-color: palegoldenrod;
+}
 
-  .createbtn{
-    background-color: transparent;
-    font-size:large;
-    border-radius: 1rem;
-  }
+.login{
+    background-color: transparent;      
+    border-radius: 3rem;
+}
+
+.createform,
+.loginform{
+  padding: 2.5rem;
+  padding-bottom: 1rem;
+  margin: auto;
+}
+
+.createform{
+  background-color: lavender;
+}
+.loginform{
+  background-color: pink;
+}
+
+.submitbtn{
+  background-color: snow;
+  font-size: large;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.createbtn{
+  background-color: transparent;
+  font-size:large;
+  border-radius: 1rem;
+}
