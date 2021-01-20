@@ -1,5 +1,6 @@
 import React from "react";
 import {Col, Row, Container} from "../components/Grid";
+import "./style.css"
 
 export default function Main(){
     return(

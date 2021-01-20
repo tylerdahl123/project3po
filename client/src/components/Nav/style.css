@@ -1,0 +1,16 @@
+.color{
+    background-color:gray;
+   color:#f3eaea ;
+}
+
+.nav-item{
+    font-style: italic;
+}
+.navbar-brand{
+    font-style: italic;
+}
+.page-container {
+    position: relative;
+    min-height: 100vh;
+    background-color:#ffeedd;
+}

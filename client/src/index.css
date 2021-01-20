@@ -1,8 +1,11 @@
 body {
-    background-color: whitesmoke;
+    background-color: rgb(243, 232, 232);
     background-size: cover;  
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
+    background-image: url(https://www.adweek.com/wp-content/uploads/2020/03/behr-zoom-background-feature-2020-600x315.jpg);
+    background-attachment: fixed;
+  background-position: center;
   }
   
   code {
@@ -68,7 +71,7 @@ body {
     background-color: lavender;
   }
   .loginform{
-    background-color: rosybrown;
+    background-color: pink;
   }
 
   .submitbtn{
