@@ -1,4 +1,4 @@
-import React, {Component } from "react";
+import React, { Component, useState, setState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css"
 
@@ -93,4 +93,3 @@ class Navbar extends Component {
 }
 
 export default Navbar;
-
