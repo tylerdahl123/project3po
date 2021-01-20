@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./pages/Login";
+import LoginPage from "./pages/LoginPage";
 import Cal from "./pages/Cal";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/" component={Main} /> 
             <Route path="/calendar" component={Cal} />   
             <Route path="/about" component={About} />
-            <Route path="/login" component={Login} />        
+            <Route path="/login" component={LoginPage} />        
           </Container>
         </Switch>
         <Footer />        

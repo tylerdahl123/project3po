@@ -1,19 +1,19 @@
-import React, { Component, useState } from "react";
+import React, { useEffect } from "react";
 import Calendar from "../../components/Calender";
 import LoginFirst from "../../components/LoginFirst";
 
-class Cal extends Component{
+export default function Cal(){
 
-    renderPage = () => {
-        if (useState.loginState === true) {
+    const [isSignedIn] = useEffect();
+
+    const renderPage = () => {
+        if (isSignedIn === true) {
             return < Calendar />;
         } else {
             return <LoginFirst />
         }
 
     }
-
-    render(){
         return(
             <div className="page-container">
                 <div className="content-wrap">
@@ -25,6 +25,3 @@ class Cal extends Component{
             </div>
         )
     }
-}
-
-export default Cal;
