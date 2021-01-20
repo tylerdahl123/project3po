@@ -1,5 +1,6 @@
 import React, { Component, useState, setState } from "react";
 import { Link } from "react-router-dom";
+import "./style.css"
 
 class Navbar extends Component {
   state = {
@@ -31,8 +32,8 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
-        <Link className="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg color mb-2" id="color">
+        <Link className="navbar-brand color " to="/">
           The Calendar App
         </Link>
         <button
@@ -51,7 +52,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/home" ? "nav-link active" : "nav-link color"}
                 to="/"
               >
                 Home
@@ -60,7 +61,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/calendar" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/calendar" ? "nav-link active" : "nav-link color"}
                 to="/calendar"
               >
                 Calendar
@@ -69,7 +70,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/about" ? "nav-link active" : "nav-link color"}
                 to="/about"
               >
                 About
@@ -78,7 +79,7 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link
                 onClick={this.toggleNav}
-                className={window.location.pathname === "/login" ? "nav-link active" : "nav-link"}
+                className={window.location.pathname === "/login" ? "nav-link active" : "nav-link color"}
                 to="/login"
               >
                 Login

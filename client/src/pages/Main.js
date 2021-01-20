@@ -1,6 +1,7 @@
 import React from "react";
 import {Col, Row, Container} from "../components/Grid";
 
+
 export default function Main(){
     return(
         <div className="page-container">

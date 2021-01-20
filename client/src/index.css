@@ -1,50 +1,53 @@
 body {
-    background-color: whitesmoke;
-    background-size: cover;  
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2rem;
-  }
-  
-  code {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  html,
-  body,
-  #root,
-  #root > div,
-  div[data-reactroot] {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
+  background-color: rgb(243, 232, 232);
+  background-size: cover;  
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+  background-image: url(https://www.adweek.com/wp-content/uploads/2020/03/behr-zoom-background-feature-2020-600x315.jpg);
+  background-attachment: fixed;
+background-position: center;
+}
+
+code {
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+#root > div,
+div[data-reactroot] {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 
 .page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  
- .content-wrap {
-    padding-top: 1.5rem;
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-  
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
+  position: relative;
+  min-height: 100vh;
+}
 
-  .jumbotron{
-      margin: 3rem;
-      background-color: pink;
-  }
+.content-wrap {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+
+.jumbotron{
+    margin: 3rem;
+    background-color: pink;
+}
 
   .button {
     cursor: pointer;
@@ -76,5 +79,3 @@ body {
     left: 5px;
     align-items: center;
   }
-
- 
