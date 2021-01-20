@@ -1,29 +1,20 @@
-import React, { Component } from "react";
+import React, { useState, setState } from "react";
 import { Link } from "react-router-dom";
 
-class Nav extends Component {
-  state={
-    loginState: false,
-    login: ""
-  }
+export default function Nav(){  
+  const [loginState, setLoginState] = useState(); 
 
-
-  handleLoginChange = loginState => {
-    this.setState({ login: this.state.login });
-  };
-
-  renderLogin = () => {
-    if (this.state.loginState === false){
+  const renderLogin = () => {
+    if (!loginState){
       return "Login" 
-    } else if (this.state.loginState === true){
+    } else if (loginState){
      return  "Logout" 
     } 
   }
 
-  render(){
   return (
     <nav className="navbar navbar-expand-lg">   
-      <a className="navbar-brand">The Calendar App</a>      
+      <p className="navbar-brand">The Calendar App</p>      
       <ul className="navbar-nav w-100 justify-content-end">       
         
         <Link to="/" className={
@@ -39,17 +30,12 @@ class Nav extends Component {
 
 
         <button className="login">
-          <Link to="/login" 
-            loginState = {this.state.loginState}
-            handleLoginChange={this.state.handleLoginChange}
-          > 
-            { this.renderLogin() }
+          <Link to="/login"> 
+             { renderLogin() }
           </Link>
           </button>
       </ul>    
     </nav>
   );
-}
-}
 
-export default Nav;
+}

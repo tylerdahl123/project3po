@@ -53,6 +53,34 @@ body {
   }
 
   .login{
-      background-color: transparent;
-      font-size: large;
+      background-color: transparent;      
+      border-radius: 3rem;
+  }
+
+  .createform,
+  .loginform{
+    padding: 2.5rem;
+    padding-bottom: 1rem;
+    margin: auto;
+  }
+
+  .createform{
+    background-color: lavender;
+  }
+  .loginform{
+    background-color: rosybrown;
+  }
+
+  .submitbtn{
+    background-color: snow;
+    font-size: large;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .createbtn{
+    background-color: transparent;
+    font-size:large;
+    border-radius: 1rem;
   }
