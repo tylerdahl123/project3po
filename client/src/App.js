@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Cal from "./pages/Cal";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import { Container, Col, Row } from "./components/Grid";
+import {Container} from "./components/Grid";
 import About from "./pages/About";
 import Main from "./pages/Main";
 
