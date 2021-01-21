@@ -18,16 +18,9 @@
 
 .boxes {
     background-color: #f7f7ff;
-<<<<<<< HEAD
-    padding: 50px;
-    position: relative;
-    bottom: 10px;
-    width: auto;
-=======
     padding: 5vh;
     bottom: 0px;
     width: 100%;
->>>>>>> 99fcbeeade1c9c7783810621f011ba343313cfaf
     opacity: 1.0
 }
 
