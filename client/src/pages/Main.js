@@ -1,20 +1,14 @@
 import React from "react";
 import {Col, Row, Container} from "../components/Grid";
+import "./style.css"
 
 
 export default function Main(){
     return(
-        <div className="page-container">
+        <div className="page-container view">
             <Container>
-                <div className="content-wrap">
-                    <Row>
-                        <Col size="md-12">
-                            <div className="jumbotron">
-                                Jumbotron (potentially unnecessary)
-                            </div>
-                        </Col>
-                    </Row>
-                    <h1>Welcome!</h1>
+                <div className="content-wrap gap">
+                    <div className="size">Welcome!</div>
                     <Row>                    
                         <Col size="md-12">
                             <div>
@@ -24,11 +18,23 @@ export default function Main(){
                                 <br />
                                 Press 'Login' to login or create a new account! 
                             </div>
+                            <br/>
+                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <br/>
+                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <br/>
+                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <br/>
+                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <br/>
+                            <div>Maybe some more information about how the application works or a nice picture?</div>
                         </Col>
                     </Row>
                 </div>
+                <h1>Definitely change the colors!</h1>
             </Container>
             {/* Places the 3 boxes at the bottom of the screen */}
+            <div className="boxes">
             <Row size="md-12">
             <Col size="md-4">
                                 <div>
@@ -49,6 +55,7 @@ export default function Main(){
                                 </div>
             </Col>
             </Row>
+            </div>
         </div>
     )
 }
