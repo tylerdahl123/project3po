@@ -14,9 +14,9 @@
 .boxes {
     background-color: #f7f7ff;
     padding: 50px;
-    position: absolute;
+    position: relative;
     bottom: 10px;
-    width: 100%;
+    width: auto;
     opacity: 1.0
 }
 
