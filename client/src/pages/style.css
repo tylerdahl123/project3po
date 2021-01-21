@@ -1,10 +1,15 @@
 .size {
     font-size: 60px;
+
 }
 
 .view {
     height: 100vh;
     background-color: #bdd5ea;
+}
+
+.spacing {
+    height: 25vh
 }
 
 .backgr {
@@ -13,11 +18,15 @@
 
 .boxes {
     background-color: #f7f7ff;
-    padding: 50px;
-    position: absolute;
-    bottom: 10px;
+    padding: 5vh;
+    bottom: 0px;
     width: 100%;
     opacity: 1.0
+}
+
+.columns {
+    float: left;
+    width: 33.33%;
 }
 
 .divide {

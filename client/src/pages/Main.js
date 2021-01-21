@@ -25,9 +25,10 @@ export default function Main(){
     return(
         <div className="page-container view">
             <Container>
-                <div className="content-wrap gap">
+                <br/>
+                <br/>
                     <div className="size">Welcome!</div>
-                    <Row>                    
+                    <Row size="md-9">                    
                         <Col size="md-12">
                             <div>
                                 <br />
@@ -46,36 +47,32 @@ export default function Main(){
                             <div>Maybe some more information about how the application works or a nice picture?</div>
                             <br/>
                             <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <div className="spacing"></div>
                         </Col>
-                    </Row>
-                </div>
-                <h1>Definitely change the colors!</h1>
-            </Container>
-            <h1>Is this working?</h1>
-            <h1>Yes it is.</h1>
+                        
             {/* Places the 3 boxes at the bottom of the screen */}
-            <div className="boxes">
-            <Row size="md-12">
-            <Col size="md-4">
-                                <div>
-                                    <h2>Get Started</h2>
-                                    <p>We all have those moments where we think we have our schedule under control. Suddenly, we realize we only have 5 minutes to get somewhere 30 mintutes away. </p>
-                                </div>
-                            </Col>
-                            <Col size="md-4">
-                                <div>
-                                    <h2>Login</h2>
-                                    <p>Login to be able to use this application across all your devices and never lose your schedule.(Mobile application coming soon.)</p>
-                                </div>
-                            </Col>
-                            <Col size="md-4">
-                                <div>
-                                    <h2>Never Be Late Again</h2>
-                                    <p>The application that takes into account the little things in life that add up to a lot of time. The time it takes for you to brush your teeth, take a shower, put on clothes, etc. all taken into account when creating your schedule.</p>
-                                </div>
-            </Col>
-            </Row>
+            <div className="md-12 boxes">
+                <div className="columns">
+                    <div>
+                        <h2>Get Started</h2>
+                        <p>We all have those moments where we think we have our schedule under control. Suddenly, we realize we only have 5 minutes to get somewhere 30 mintutes away.</p>
+                    </div>
+                </div>
+                <div className="columns">
+                    <div>
+                        <h2>Login</h2>
+                        <p>Login to be able to use this application across all your devices and never lose your schedule.(Mobile application coming soon.)</p>
+                    </div>
+                </div>
+                <div className="columns">
+                    <div>
+                        <h2>Never Be Late Again</h2>
+                        <p>The application that takes into account the little things in life that add up to a lot of time. The time it takes for you to brush your teeth, take a shower, put on clothes, etc. all taken into account when creating your schedule.</p>
+                    </div>
+                </div>
             </div>
+            </Row>
+            </Container>
         </div>
     )
 }
