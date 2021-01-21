@@ -29,8 +29,7 @@ function Login() {
   });
 
   return (
-    <button onClick={signIn} className="button">
-      <img src="icons/google.svg" alt="google login" className="icon"></img>
+    <button onClick={signIn} className="logbutton">      
       <span className="buttonText">Login</span>
     </button>
   );

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 
 import LoginFirst from "../../components/LoginFirst";
 import TimeTable from "../../components/TimeTable";
+import '../style.css';
+
 
 export default function Cal(){
    
@@ -12,6 +14,7 @@ export default function Cal(){
                         Calendar
                     </h1>
                     <TimeTable />
+
                 </div>
             </div>
         )

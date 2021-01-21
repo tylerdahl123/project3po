@@ -10,3 +10,9 @@ p{
     font-size: medium;
     font-style: italic;
 }
+
+.uicard{
+    border-style: solid;
+    border-color: white;
+    border-width: 40px;
+}
