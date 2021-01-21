@@ -41,11 +41,9 @@ export default function Main(){
                             <br/>
                             <h4>How time actually goes: {secondsTwo}</h4>
                             <br/>
-                            <h5>This is how our application helps to keep you on time.</h5>
+                            <h5></h5>
                             <br/>
-                            <div>Maybe some more information about how the application works or a nice picture?</div>
                             <br/>
-                            <div>Maybe some more information about how the application works or a nice picture?</div>
                             <div className="spacing"></div>
                         </Col>
                         
