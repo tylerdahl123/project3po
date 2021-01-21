@@ -5,7 +5,7 @@ body {
   letter-spacing: .2rem;
   background-image: url(https://www.adweek.com/wp-content/uploads/2020/03/behr-zoom-background-feature-2020-600x315.jpg);
   background-attachment: fixed;
-background-position: center;
+  background-position: center;
 }
 
 code {
@@ -29,7 +29,8 @@ div[data-reactroot] {
 
 .page-container {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
+  margin-top: 3em;
 }
 
 .content-wrap {
@@ -37,38 +38,15 @@ div[data-reactroot] {
   padding-bottom: 2.5rem;    /* Footer height */
 }
 
-.jumbotron{
-    margin: 3rem;
-    
-}
-
-  .button {
+  .logbutton {
     cursor: pointer;
-    display: block;
-    font-size: 1.3em;
-    box-sizing: content-box;
-    margin: 20px auto 0px;
-    width: auto;
-    padding: 10px 20px;
+    font-size: 1.2em;
     border-radius: 24px;
     border-color: transparent;
-    background-color: white;
-    /* box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.1); */
-    box-shadow: 0px 16px 60px rgba(78, 79, 114, 0.08);
-    position: relative;
+    background-color: white; 
   }
   
   .buttonText {
-    color: #4285f4;
+    color: black;
     font-weight: bold;
-    margin-left: 10px;
-  }
-  
-  .icon {
-    height: 20px;
-    width: 20px;
-    margin-right: 0px;
-    position: absolute;
-    left: 5px;
-    align-items: center;
   }

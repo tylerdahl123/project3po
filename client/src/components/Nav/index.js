@@ -75,11 +75,19 @@ class Navbar extends Component {
                 to="/about"
               >
                 About
-              </Link>
+              </Link>              
             </li>
-          </ul>
-        </div>
-        <Login />
+            <li className="nav-item">
+              <Link
+                onClick={this.toggleNav}
+                className={window.location.pathname === "/login" ? "nav-link active" : "nav-link color"}
+                to="/login"
+              >
+                Login
+              </Link>               
+            </li>
+          </ul>          
+        </div>        
       </nav>
     );
   }
