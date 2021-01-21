@@ -24,24 +24,29 @@ export default function Main(){
 
 
         return(
-            <div className="page-container">
+            <div className="page-container view">
                 <Container>
-                    <div className="size">Welcome!</div>
+
+                    <div className="size">
+                        <br />
+                        <br />
+                        Welcome!
+                     </div>
                     <Row size="md-9">                    
                         <Col size="md-12">
                             <div>
                                 <br />
-                                <h3>This website helps you stay on time!</h3>
+                                <h3 className="hcolor">This website helps you stay on time!</h3>
                                 <br /> 
                                 <br />
-                                <h3>Press 'Login' to login or create a new account!</h3>
+                                <h3 className="hcolor">Press 'Login' to login or create a new account!</h3>
                             </div>
                             <br/>
-                            <h4>How your mind measures time: {seconds}</h4>
+                            <h4 className="hcolor">How your mind measures time: {seconds}</h4>
                             <br/>
-                            <h4>How time actually goes: {secondsTwo}</h4>
+                            <h4 className="hcolor">How time actually goes: {secondsTwo}</h4>
                             <br/>
-                            <h5></h5>
+                            <h5 className="hcolor"></h5>
                             <br/>
                             <br/>
                             <div className="spacing"></div>
