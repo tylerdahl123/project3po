@@ -1,6 +1,7 @@
-import React, { Component, useState, setState } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./style.css"
+import "./style.css";
+import Login from "../Login";
 
 class Navbar extends Component {
   state = {
@@ -76,17 +77,9 @@ class Navbar extends Component {
                 About
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                onClick={this.toggleNav}
-                className={window.location.pathname === "/login" ? "nav-link active" : "nav-link color"}
-                to="/login"
-              >
-                Login
-              </Link>
-            </li>
           </ul>
         </div>
+        <Login />
       </nav>
     );
   }
