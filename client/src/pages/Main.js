@@ -22,11 +22,10 @@ export default function Main(){
     return () => clearInterval(interval);
   }, []);
 
-    return(
-        <div className="page-container view">
-            <Container>
-                <br/>
-                <br/>
+
+        return(
+            <div className="page-container">
+                <Container>
                     <div className="size">Welcome!</div>
                     <Row size="md-9">                    
                         <Col size="md-12">
