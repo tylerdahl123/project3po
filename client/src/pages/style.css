@@ -5,33 +5,24 @@
 }
 
 .view {
-    height: 100vh;
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-   background-image: url(https://www.tritoncanada.ca/assets/site/online-background-check.png);
+    background-image: url(https://www.tritoncanada.ca/assets/site/online-background-check.png);
 }
 
 .size{
     color: rgb(245, 243, 245);
 }
 
-h3{
-    font-style: italic;
-    color: rgb(245, 243, 245);
-}
-h4{
-    font-style: italic;
-    color: rgb(245, 243, 245);
-}
-
-h5{
+.hcolor{
     font-style: italic;
     color: rgb(245, 243, 245);
 }
 
 .spacing {
-    height: 25vh
+    height: 10vh
 }
 
 .backgr {
