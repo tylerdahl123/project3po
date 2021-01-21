@@ -1,9 +1,27 @@
-import React from "react";
+import React,  {useState, useEffect} from "react";
 import {Col, Row, Container} from "../components/Grid";
 import "./style.css"
 
 
 export default function Main(){
+
+    const [seconds, setSeconds] = useState(0);
+    const [secondsTwo, setSecondsTwo]= useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsTwo(secondsTwo => secondsTwo + 1);
+    }, 800);
+    return () => clearInterval(interval);
+  }, []);
+
     return(
         <div className="page-container view">
             <Container>
@@ -13,17 +31,17 @@ export default function Main(){
                         <Col size="md-12">
                             <div>
                                 <br />
-                                This website helps you stay on time!
+                                <h3>This website helps you stay on time!</h3>
                                 <br /> 
                                 <br />
-                                Press 'Login' to login or create a new account! 
+                                <h3>Press 'Login' to login or create a new account!</h3>
                             </div>
                             <br/>
-                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <h4>How your mind measures time: {seconds}</h4>
                             <br/>
-                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <h4>How time actually goes: {secondsTwo}</h4>
                             <br/>
-                            <div>Maybe some more information about how the application works or a nice picture?</div>
+                            <h5>This is how our application helps to keep you on time.</h5>
                             <br/>
                             <div>Maybe some more information about how the application works or a nice picture?</div>
                             <br/>
@@ -33,6 +51,8 @@ export default function Main(){
                 </div>
                 <h1>Definitely change the colors!</h1>
             </Container>
+            <h1>Is this working?</h1>
+            <h1>Yes it is.</h1>
             {/* Places the 3 boxes at the bottom of the screen */}
             <div className="boxes">
             <Row size="md-12">
