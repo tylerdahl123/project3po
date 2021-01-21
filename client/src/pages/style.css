@@ -1,9 +1,22 @@
-#color {
-    background-color: #8fc0a9;
+.size {
+    font-size: 60px;
+}
+
+.view {
+    height: 100vh;
+    background-color: #bdd5ea;
 }
 
 .backgr {
-    background-color: #faf3dd;
+    background-color: #bdd5ea;
+}
+
+.boxes {
+    background-color: #f7f7ff;
+    padding: 50px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
 
 .divide {
@@ -12,4 +25,12 @@
     margin: auto;
     width: 100%;
     padding: 100px;
+}
+
+.gap{
+    height: 35vw;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
 }
