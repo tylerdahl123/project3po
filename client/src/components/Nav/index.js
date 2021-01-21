@@ -86,6 +86,15 @@ class Navbar extends Component {
                 Login
               </Link>               
             </li>
+            <li className="nav-item">
+              <Link
+                onClick={this.toggleNav}
+                className={window.location.pathname === "/settings" ? "nav-link active" : "nav-link color"}
+                to="/settings"
+              >
+                Settings
+              </Link>               
+            </li>
           </ul>          
         </div>        
       </nav>
