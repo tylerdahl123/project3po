@@ -1,6 +1,7 @@
 import React,  {useState, useEffect} from "react";
 import {Col, Row, Container} from "../components/Grid";
 import "./style.css"
+import { Login } from "../components/Login";
 
 
 export default function Main(){
@@ -38,8 +39,7 @@ export default function Main(){
                                 <br />
                                 <h3 className="hcolor">This website helps you stay on time!</h3>
                                 <br /> 
-                                <br />
-                                <h3 className="hcolor">Press 'Login' to login or create a new account!</h3>
+                                <br />                                
                             </div>
                             <br/>
                             <h4 className="hcolor">How your mind measures time: {seconds}</h4>
@@ -49,6 +49,7 @@ export default function Main(){
                             <h5 className="hcolor"></h5>
                             <br/>
                             <br/>
+                            <Login />
                             <div className="spacing"></div>
                         </Col>
                         
