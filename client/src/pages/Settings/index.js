@@ -1,11 +1,12 @@
 import React from 'react';
 import { Button, Card, Header, Title, Text, Footer, Body, Dropdown, DropdownButton } from 'react-bootstrap';
+import "./style.css"
 
 function Settings() {
     return (
         <div>
 <Card className="text-center">
-  <Card.Header>Featured</Card.Header>
+  <Card.Header>Customize</Card.Header>
   <Card.Body>
   <DropdownButton id="dropdown-basic-button" title="Color Scheme">
   <Dropdown.Item href="#/action-1">Dark Mode</Dropdown.Item>
