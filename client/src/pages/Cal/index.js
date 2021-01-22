@@ -5,8 +5,9 @@ import TimeTable from "../../components/TimeTable";
 import '../style.css';
 
 
-export default function Cal(){
-   
+
+export default function Cal(){  
+
         return(
             <div className="page-container">
                 <div className="content-wrap">

@@ -1,17 +1,23 @@
-import React from 'react';
-import { useGoogleLogin } from 'react-google-login';
+import React, { useState } from 'react';
+import { useGoogleLogin, useGoogleLogout } from 'react-google-login';
 
-// refresh token
 import { refreshTokenSetup } from '../utils/refreshToken';
-
+ 
+export function Login() {
 const clientId =
-  '755847287284-ihitgd9ha8br0o3oe0jqalrs94qdj85s.apps.googleusercontent.com';
+  '755847287284-ihitgd9ha8br0o3oe0jqalrs94qdj85s.apps.googleusercontent.com'; 
 
-function Login() {
+  const[loginState, setLoginState]= useState({
+    login:false
+  });
+
   const onSuccess = (res) => {
-    console.log('Login Success: currentUser:', res.profileObj);
+    setLoginState({...loginState, 
+      login: loginState.login=true});
+    console.log(loginState)
+    console.log('Login Success: currentUser:', res.profileObj);   
     alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
+      `Logged in successfully welcome ${res.profileObj.name} 😍.`
     );
     refreshTokenSetup(res);
   };
@@ -28,11 +34,40 @@ function Login() {
     accessType: 'offline',
   });
 
-  return (
-    <button onClick={signIn} className="logbutton">      
-      <span className="buttonText">Login</span>
-    </button>
-  );
-}
+  const onLogoutSuccess = (res) => {
+    setLoginState({...loginState, 
+      login: loginState.login=false});
+    console.log(loginState)
+    console.log('Logged out Success');
+    alert('Logged out Successfully ✌');
+  };
 
-export default Login;
+  const onLogoutFailure = () => {
+    console.log('Logout failed.');
+  };
+
+  const { signOut } = useGoogleLogout({
+    clientId,
+    onLogoutSuccess,
+    onLogoutFailure,
+  });
+
+  function renderButton(){
+    if (loginState.login === true){
+        return (
+          <button onClick={signOut} className="logbutton">      
+            <span className="buttonText">Logout</span>
+          </button>
+        );
+    } else {
+      return (
+        <button onClick={signIn} className="logbutton">
+          <span className="buttonText">Login</span>
+        </button>
+      )
+    }
+  }    
+  return (
+    renderButton()    
+  );           
+};

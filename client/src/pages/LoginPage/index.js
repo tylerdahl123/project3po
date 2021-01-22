@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from "../../components/Grid";
-import Login from '../../components/Login.js';
-import Logout from '../../components/Logout.js';
+import { Login } from '../../components/Login.js';
 import '../style.css';
 
-export default function LoginPage(){
+export default function LoginPage(props){
+
     return(
         <div className="page-container">
             <div className="content-wrap">
@@ -22,7 +22,6 @@ export default function LoginPage(){
                     <Row>
                         <Col size ="md-12">
                             <Login />
-                            <Logout />
                         </Col>
                     </Row>
                 </Container>
