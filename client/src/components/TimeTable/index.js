@@ -1,130 +1,79 @@
-
-
-import React from 'react'
-
-import FullCalendar, { CalendarApi, formatDate } from '@fullcalendar/react'
-import dayPlugin from '@fullcalendar/daygrid'
-import timePlugin from '@fullcalendar/timegrid'
-import interactionPlugin from '@fullcalendar/interaction'
-import googleCalendarPlugin from "@fullcalendar/google-calendar"
+import React, { Component } from "react";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import Api from "../../utils/API"
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import { getEvents } from "./fetch"
 
-
-let eventid= 0
-let today= new Date().toISOString().replace(/T.*S/,'')
-
-const INITIAL_EVENTS=[{
-  id: createEventId(),
-  title: "TEST",
-  start: today
-}]
+const localizer = momentLocalizer(moment);
+const DnDCalendar = withDragAndDrop(Calendar);
 
 
 
-
- function createEventId(){
-    return String(eventid++)
-}
-
-
-function renderContent(res){
-  return(
-    <div>
-      <strong>{res.timeText}</strong>
-      <i>{res.event.title}</i>
-      <i>{res.event.body}</i>
-    </div>
-  )
-}
-
-
-export default class TimeTable extends React.Component {
-
-  state = {
-    currentEvents: []
+export default class TimeTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      events: []
+    };
   }
 
-
-
-HandleDateSelect = (res) => {
-  let title = prompt('What are you planning for?')
-  let body = prompt("What do you need to do?")
-  let CalendarApi= res.view.calendar
-  CalendarApi.unselect()
-  if (title) {
-    CalendarApi.addEvent({
-    id: createEventId(),
-    title,
-    body,
-    start: res.startStr,
-     end: res.endStr,
-     allDay: res.allDay
-    })
+  componentDidMount() {
+    getEvents(events => {
+      this.setState({ events });
+    });
   }
-};
-
-handleEvents=(events => {
-  this.setState({
-    currentEvents: events
-  })
-})
-//calendarId is your email address...or it should be 
-componentDidMount(){
-  Api.getEvents("<YOUR_CALENDAR_ID_HERE>").then(res => {
-    console.log(res.data.items);
-    const editedItems = res.data.items.map(item => {
-      return { title: item.summary, date: item.start.dateTime}
+handleSelect = ({ start, end }) => {
+  const title = window.prompt('New Event name')
+  if (title)
+    this.setState({
+      events: [
+        ...this.state.events,
+        {
+          start,
+          end,
+          title,
+        },
+      ],
     })
-    this.setState({ currentEvents: editedItems},()=>{
-      // console.log(this.state.currentEvents)
-    })
-  });
-//  const newEvent= {
-//   "end": {
-//     "date": "2021-01-21"
-//   },
-//   "start": {
-//     "date": "2021-01-21"
-//   },
-//   "summary": ""
-// }
-
-// Api.AddEvents("", newEvent)
-
-
-
-
 }
-  
+
+
+  onEventResize = (data) => {
+    const { start, end } = data;
+
+    this.setState((state) => {
+      state.events[0].start = start;
+      state.events[0].end = end;
+      return { events: [...state.events] };
+    });
+  };
+
+  onEventDrop = (data) => {
+    console.log(data);
+  };
+ 
   render() {
     return (
-   
-          <FullCalendar
-            plugins={[dayPlugin, timePlugin, interactionPlugin, googleCalendarPlugin]}
-            headerToolbar={{
-              left: 'prev,next today',
-              center: 'title',
-              right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            }}
-            initialView='dayGridMonth'
-            editable={true}
-            selectable={true}
-            initialEvents={INITIAL_EVENTS}
-            googleCalendarApikey=''
-            events={this.state.currentEvents}
-            
-            
-            select={this.HandleDateSelect} 
-            handleEvents={this.handleEvents}
-            eventContent={renderContent}
-            
-          />
-       
-    )
+      <div className="TimeTable">
+        <DnDCalendar
+        selectable={true}
+          defaultDate={moment().toDate()}
+          defaultView="month"
+          events={this.state.events}
+          localizer={localizer}
+          onEventDrop={this.onEventDrop}
+          onEventResize={this.onEventResize}
+          resizable
+          style={{ height: "100vh" }}
+          onSelectSlot={this.handleSelect}
+          step={.5}
+          timeslots={10}
+        />
+      </div>
+    );
   }
-
-
-
-
-
 }
