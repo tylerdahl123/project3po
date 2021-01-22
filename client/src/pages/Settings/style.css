@@ -1,0 +1,11 @@
+.text-center {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2rem;
+    background-color:#ffeedd;
+}
+
+.dropdown-basic-button {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2rem;
+    color: white;
+}
