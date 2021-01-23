@@ -3,7 +3,6 @@ import {Col, Row, Container} from "../components/Grid";
 import "./style.css"
 import { Login } from "../components/Login";
 
-
 export default function Main(){
 
     const [seconds, setSeconds] = useState(0);
@@ -22,7 +21,6 @@ export default function Main(){
     }, 800);
     return () => clearInterval(interval);
   }, []);
-
 
         return(
             <div className="page-container view">
