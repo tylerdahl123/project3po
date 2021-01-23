@@ -6,16 +6,44 @@ function Settings() {
     return (
         <div>
 <Card className="text-center">
-  <Card.Header>Customize</Card.Header>
+  <Card.Header>Customize your theme</Card.Header>
   <Card.Body>
-  <DropdownButton id="dropdown-basic-button" title="Color Scheme">
+  <DropdownButton id="dropdown-basic-button" title="Color Scheme" style={{color: "red"}}>
+    <br></br>
   <Dropdown.Item href="#/action-1">Dark Mode</Dropdown.Item>
   <Dropdown.Item href="#/action-2">Theme 1</Dropdown.Item>
   <Dropdown.Item href="#/action-3">Theme 2</Dropdown.Item>
+  </DropdownButton>    
+  </Card.Body> 
+</Card>
+
+<br/>
+
+<Card className="text-center">
+  <Card.Header>Customize your setting #2</Card.Header>
+  <Card.Body>
+  <DropdownButton id="dropdown-basic-button" title="Setting 2" style={{color: "red"}}>
+    <br></br>
+  <Dropdown.Item href="#/action-1">option 1</Dropdown.Item>
+  <Dropdown.Item href="#/action-2">option 2</Dropdown.Item>
+  <Dropdown.Item href="#/action-3">option 3</Dropdown.Item>
+  </DropdownButton>   
+  </Card.Body> 
+</Card>
+
+<br/>
+
+<Card className="text-center">
+  <Card.Header>Customize your setting #2</Card.Header>
+  <Card.Body>
+  <DropdownButton id="dropdown-basic-button" title="Setting 3" style={{color: "red"}}>
+    <br></br>
+  <Dropdown.Item href="#/action-1">option 1</Dropdown.Item>
+  <Dropdown.Item href="#/action-2">option 2</Dropdown.Item>
+  <Dropdown.Item href="#/action-3">option 3</Dropdown.Item>
   </DropdownButton>
     
-  </Card.Body>
-  <Card.Footer className="text-muted">2 days ago</Card.Footer>
+  </Card.Body> 
 </Card>
             
         </div>
