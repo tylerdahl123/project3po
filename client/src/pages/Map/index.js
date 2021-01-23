@@ -23,7 +23,7 @@ console.log('trafficLayer: ', trafficLayer)
   }
   return (
      <LoadScript
-       googleMapsApiKey='AIzaSyCL1pqTz4iiPIuP1_RB2NacTwUsuwc2LG8'>
+       googleMapsApiKey="<API_KEY_HERE>">
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
