@@ -6,9 +6,11 @@ function Settings() {
     return (
         <div>
 <Card className="text-center">
-  <Card.Header>Customize your theme</Card.Header>
+
+  <Card.Header>Customize</Card.Header>
   <Card.Body>
-  <DropdownButton id="dropdown-basic-button" title="Color Scheme" style={{color: "red"}}>
+  <DropdownButton id="dropdown-basic-button" title="Color Scheme" style={{olor: "red"}}>
+
     <br></br>
   <Dropdown.Item href="#/action-1">Dark Mode</Dropdown.Item>
   <Dropdown.Item href="#/action-2">Theme 1</Dropdown.Item>
