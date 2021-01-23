@@ -12,6 +12,7 @@
 
 .dropdown-toggle {
     background-color: rgb(108, 121, 138);
+
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
     padding: 10px;
@@ -20,4 +21,8 @@
 .dropdown-toggle.btn.btn-primary {
     padding: 20px;
     margin: 0px;
+
+.btn.dropdown-toggle::before {
+    margin-right: 10px;
 }
+
