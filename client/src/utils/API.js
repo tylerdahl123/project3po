@@ -5,6 +5,9 @@ export default {
   getEvents: function(calendarId) {
     return axios.get(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=<API_KEY_HERE>&singleEvents=true`);//the api key should be in the slack channel
   },
+  getSavedBooks: function() {
+    return axios.get("/api/books");
+  },
   // Gets all saved books
   AddEvents: function(calendarId, data) {
     return axios.post(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=<API_KEY_HERE>`, {headers: {
