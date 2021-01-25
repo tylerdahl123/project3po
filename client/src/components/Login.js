@@ -15,9 +15,11 @@ const clientId =
     setLoginState({...loginState, 
       login: loginState.login=true});
     localStorage.setItem('login', true)
+    localStorage.setItem('user', res.profileObj.name)
+    localStorage.setItem('email', res.profileObj.email)
     console.log('Login Success: currentUser:', res.profileObj);   
     alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍.`
+      `Login success! Welcome ${res.profileObj.name}!`
     );
     refreshTokenSetup(res);
   };

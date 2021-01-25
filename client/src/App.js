@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import {Container} from "./components/Grid";
 import About from "./pages/About";
-import Main from "./pages/Main";
+import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 
 
@@ -17,7 +17,7 @@ function App() {
         <Nav />
         <Switch>
           <Container>
-            <Route exact path="/" component={Main} /> 
+            <Route exact path="/" component={Home} />            
             <Route path="/calendar" component={Cal} />
             <Route path="/settings" component={Settings} />    
             <Route path="/about" component={About} />      
