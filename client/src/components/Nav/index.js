@@ -31,6 +31,27 @@ class Navbar extends Component {
   }
 
   render() {
+
+    const isLoggedIn = (localStorage.getItem('login') === 'true');
+
+    let showsettings;
+
+    if (isLoggedIn) {
+      showsettings = 
+      <li className="nav-item">      
+      <Link
+      onClick={this.toggleNav}
+      className={window.location.pathname === "/settings" ? "nav-link active" : "nav-link color"}
+      to="/settings"
+      >
+      Settings
+      </Link>   
+    </li>   
+    } else {
+      showsettings = ""
+    }
+
+
     return (
       <nav className="navbar navbar-expand-lg color mb-2" id="color">
         <Link className="navbar-brand color " to="/">
@@ -76,15 +97,7 @@ class Navbar extends Component {
                 About
               </Link>              
             </li>
-            <li className="nav-item">
-              <Link
-                onClick={this.toggleNav}
-                className={window.location.pathname === "/settings" ? "nav-link active" : "nav-link color"}
-                to="/settings"
-              >
-                Settings
-              </Link>               
-            </li>
+            { showsettings }
           </ul>          
         </div>        
       </nav>
