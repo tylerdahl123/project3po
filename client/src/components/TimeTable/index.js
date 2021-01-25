@@ -7,7 +7,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { getEvents } from "./fetch"
 import API from "../../utils/API";
-
+const userName = localStorage.getItem("email");
+// const userName = localStorage.getItem(userInfo.email)
 const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
 
@@ -26,6 +27,7 @@ export default class TimeTable extends Component {
 //get the email form the google auth or have them input the user name to pass into the calls
 //grab the email...save it into local storage then pass that into for userName
   componentDidMount() {
+    
     getEvents(events => {
       this.setState({ events },() => {
        API.getsavedEvents("tylerdahl123").then(res => {
