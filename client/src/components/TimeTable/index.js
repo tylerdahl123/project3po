@@ -4,9 +4,9 @@ import moment from "moment";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import Api from "../../utils/API"
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { getEvents } from "./fetch"
+import API from "../../utils/API";
 
 const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
@@ -19,13 +19,28 @@ export default class TimeTable extends Component {
     this.state = {
       events: []
     };
+   
+   
   }
-
+//get events from google then join it with my database
+//get the email form the google auth or have them input the user name to pass into the calls
+//grab the email...save it into local storage then pass that into for userName
   componentDidMount() {
     getEvents(events => {
-      this.setState({ events });
+      this.setState({ events },() => {
+       API.getsavedEvents("tylerdahl123").then(res => {
+      const joined = this.state.events.concat(res.data)
+      this.setState({ events: joined })
+      console.log("HELLO");
+       
+  })
     });
-  }
+ 
+  })
+}
+  
+
+
 handleSelect = ({ start, end }) => {
   const title = window.prompt('New Event name')
   if (title)
@@ -36,10 +51,29 @@ handleSelect = ({ start, end }) => {
           start,
           end,
           title,
-        },
+          
+        }, 
       ],
+        
+    }, () => {
+      this.handleEventSave();
     })
+  
 }
+handleEventSave = () =>{
+  const event = this.state.events;
+
+const newEvent = event[event.length -1];
+console.log(newEvent);
+  API.saveEvent({
+    userName: "tylerdahl123",
+    start: new Date(newEvent.start),
+    end: new Date(newEvent.end),
+    title: newEvent.title
+  })
+  this.setState({})
+}
+  
 // getEvents = () => {
 //   API.getEvents(this.state.q)
 //     .then(res =>
@@ -64,22 +98,22 @@ handleSelect = ({ start, end }) => {
       return { events: [...state.events] };
     });
   };
-  moveEvent({ event, start, end }) {
-    const { events } = this.state;
+  // moveEvent({ event, start, end }) {
+  //   const { events } = this.state;
 
-    const idx = events.indexOf(event);
-    const updatedEvent = { ...event, start, end };
+  //   const idx = events.indexOf(event);
+  //   const updatedEvent = { ...event, start, end };
 
-    const nextEvents = [...events];
-    nextEvents.splice(idx, 1, updatedEvent);
+  //   const nextEvents = [...events];
+  //   nextEvents.splice(idx, 1, updatedEvent);
 
-    this.setState({
-      events: nextEvents
-    });
-  }
-  // onEventDrop = (data) => {
-  //   console.log(data);
-  // };
+  //   this.setState({
+  //     events: nextEvents
+  //   });
+  // }
+  onEventDrop = (data) => {
+    console.log(data);
+  };
  
   render() {
     return (
@@ -90,11 +124,12 @@ handleSelect = ({ start, end }) => {
           defaultView="day"
           events={this.state.events}
           localizer={localizer}
-          onEventDrop={this.moveEvent}
+          onEventDrop={this.onEventDrop}
           onEventResize={this.onEventResize}
           resizable
           style={{ height: "100vh" }}
           onSelectSlot={this.handleSelect}
+          handleEventSave={this.handleEventSave}
           step={.5}
           timeslots={10}
         />
