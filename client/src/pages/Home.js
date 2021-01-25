@@ -1,13 +1,13 @@
 import React from 'react';
 import Main from "./Main";
-import LoggedInMain from "./LoggedInMain";
+import NewHome from "./NewHome";
 
 export default function Home(){
 
 
     const renderMain = () =>{
         if (localStorage.getItem('login') === 'true'){
-            return <LoggedInMain />
+            return <NewHome />
             } else {
              return <Main />
           }
