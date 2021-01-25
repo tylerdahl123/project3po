@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MapContainer from "../Map"
+// import MapContainer from "../Map"
 import LoginFirst from "../../components/LoginFirst";
 import TimeTable from "../../components/TimeTable";
 import '../style.css';
@@ -26,6 +26,15 @@ export default function Cal(){
                 return() => clearInterval(newLong)
               });
             }
+        
+
+        const setShow=()=>{       
+            if (localStorage.getItem('login') === 'true'){
+                   return <TimeTable /> 
+                } else {
+                    return <LoginFirst />
+              }
+        }
 
         return(
             <div className="page-container">
@@ -33,10 +42,12 @@ export default function Cal(){
                     <h1>
                         Calendar
                     </h1>
-                    <TimeTable />
-                    <MapContainer 
+                    {/* <TimeTable /> */}
+                    {/* <MapContainer 
                         loadLat = {lati}
-                        loadLong = {long} />
+                        loadLong = {long} /> */}
+
+                        { setShow() }
                 </div>
             </div>
         )
