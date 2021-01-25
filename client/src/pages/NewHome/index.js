@@ -29,6 +29,9 @@ function NewHome() {
 
     return(
     <div>
+        <div>            
+           <h1> Welcome {localStorage.getItem('user')} </h1>
+        </div>  
         <MapContainer 
             loadLat = {lati}
             loadLong = {long} />
