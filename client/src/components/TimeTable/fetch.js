@@ -7,7 +7,7 @@ const CALENDAR_ID = localStorage.getItem("email");
 
 
 
-let GOOGLE_CALENDAR_URL = `https://www.googleapis.com/calendar/v3/calendars/dahlgren15@gmail.com/events?key=AIzaSyCL1pqTz4iiPIuP1_RB2NacTwUsuwc2LG8&singleEvents=true`;
+let GOOGLE_CALENDAR_URL = `https://www.googleapis.com/calendar/v3/calendars/<CALENDAR_ID>/events?key=<API_KEY>&singleEvents=true`;
 
     export function getEvents(callback) {
   request.get(GOOGLE_CALENDAR_URL).end((err, resp) => {
