@@ -40,7 +40,20 @@ handleSelect = ({ start, end }) => {
       ],
     })
 }
-
+// getEvents = () => {
+//   API.getEvents(this.state.q)
+//     .then(res =>
+//       this.setState({
+//         events: res.data
+//       })
+//     )
+//     .catch(() =>
+//       this.setState({
+//         events: [],
+//         message: "No New Books Found, Try a Different Query"
+//       })
+//     );
+// };
 
   onEventResize = (data) => {
     const { start, end } = data;
@@ -51,10 +64,22 @@ handleSelect = ({ start, end }) => {
       return { events: [...state.events] };
     });
   };
+  moveEvent({ event, start, end }) {
+    const { events } = this.state;
 
-  onEventDrop = (data) => {
-    console.log(data);
-  };
+    const idx = events.indexOf(event);
+    const updatedEvent = { ...event, start, end };
+
+    const nextEvents = [...events];
+    nextEvents.splice(idx, 1, updatedEvent);
+
+    this.setState({
+      events: nextEvents
+    });
+  }
+  // onEventDrop = (data) => {
+  //   console.log(data);
+  // };
  
   render() {
     return (
@@ -62,10 +87,10 @@ handleSelect = ({ start, end }) => {
         <DnDCalendar
         selectable={true}
           defaultDate={moment().toDate()}
-          defaultView="month"
+          defaultView="day"
           events={this.state.events}
           localizer={localizer}
-          onEventDrop={this.onEventDrop}
+          onEventDrop={this.moveEvent}
           onEventResize={this.onEventResize}
           resizable
           style={{ height: "100vh" }}
