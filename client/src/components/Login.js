@@ -9,18 +9,24 @@ const clientId =
 
   const[loginState, setLoginState]= useState({
     login:false
-  });
+  });  
+  
+  const loginAlert=()=>{
+    if ( localStorage.getItem('login') === false){
+      alert(
+        `Login success! Welcome ${localStorage.getItem('user')}!`
+      )
+    }
+  }
 
   const onSuccess = (res) => {
     setLoginState({...loginState, 
       login: loginState.login=true});
-    localStorage.setItem('login', true)
     localStorage.setItem('user', res.profileObj.name)
     localStorage.setItem('email', res.profileObj.email)
-    console.log('Login Success: currentUser:', res.profileObj);   
-    alert(
-      `Login success! Welcome ${res.profileObj.name}!`
-    );
+    console.log('Login Success: currentUser:', res.profileObj);
+    loginAlert();
+    localStorage.setItem('login', true);   
     refreshTokenSetup(res);
   };
 
@@ -39,7 +45,7 @@ const clientId =
   const onLogoutSuccess = (res) => {
     setLoginState({...loginState, 
       login: loginState.login=false});
-    localStorage.setItem('login', false)
+    localStorage.setItem('login', false);
     console.log('Logged out Success');
     alert('Logged out Successfully ✌');
   };
