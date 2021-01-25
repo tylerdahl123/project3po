@@ -2,13 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema; 
 
 const eventSchema = new Schema ({
-    end: {type: Date, required: true},
-    start: {type: Date, required: true},
-    summary: {type: String},
-    id: { type: String, required: true, unique: true}
-
+    userName: {type: String},
+    end: {type: Date},
+    start: {type: Date},
+    title: {type: String}
 });
+//add user name field 
+const Event = mongoose.model("Events", eventSchema);
 
-const Events = mongoose.model("Event", eventSchema);
-
-module.exports = Events; 
+module.exports = Event; 
