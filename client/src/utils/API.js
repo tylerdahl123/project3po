@@ -1,14 +1,12 @@
 import axios from "axios";
 
 export default {
-  // Gets events from the Google API
   getEvents: function(calendarId) {
     return axios.get(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=<API_KEY_HERE>&singleEvents=true`);//the api key should be in the slack channel
   },
-  getSavedBooks: function() {
-    return axios.get("/api/books");
+  getWeather: function(lati, long) {
+    return axios.get(`http://api.openweathermap.org/data/2.5/uvi?lat=${lati}&lon=${long}&appid=30b6b2806250637e3cf7ca1b25aa6a9f`)
   },
-  // Gets all saved books
   AddEvents: function(calendarId, data) {
     return axios.post(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=<API_KEY_HERE>`, {headers: {
       'Content-Type': 'application/json',
