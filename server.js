@@ -18,7 +18,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongoserverkey",
+  process.env.MONGODB_URI,
   {
     useCreateIndex: true,
     useNewUrlParser: true
