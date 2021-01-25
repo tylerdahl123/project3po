@@ -14,7 +14,7 @@ const clientId =
   const onSuccess = (res) => {
     setLoginState({...loginState, 
       login: loginState.login=true});
-    console.log(loginState)
+    localStorage.setItem('login', true)
     console.log('Login Success: currentUser:', res.profileObj);   
     alert(
       `Logged in successfully welcome ${res.profileObj.name} 😍.`
@@ -37,7 +37,7 @@ const clientId =
   const onLogoutSuccess = (res) => {
     setLoginState({...loginState, 
       login: loginState.login=false});
-    console.log(loginState)
+    localStorage.setItem('login', false)
     console.log('Logged out Success');
     alert('Logged out Successfully ✌');
   };
