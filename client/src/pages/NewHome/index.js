@@ -5,7 +5,7 @@ import MapContainer from "../../components/Map"
 import Weather from "../../components/Weather"
 import TimeTable from "../../components/TimeTable"
 
-function NewHome() {
+function NewHome(props) {
 
     const [lati, setLati] = useState(' ');
     const [long, setlong] = useState(' ');
@@ -30,7 +30,7 @@ function NewHome() {
 
     return(
     <div>
-        <div>            
+        <div>         
            <h1> Welcome {localStorage.getItem('user')} </h1>
         </div> 
         <div className="row">

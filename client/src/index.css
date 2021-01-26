@@ -69,8 +69,9 @@ div[data-reactroot] {
     font-size: 1.5em;
     padding: .5em 2em;
     border-color: transparent;
-    background-color: white; 
+    background-color:white; 
     opacity: 30%;
+    color: black;
   }
   
   .buttonText {
@@ -82,4 +83,56 @@ div[data-reactroot] {
     background-color:whitesmoke;    
     font-size: 1.5em;
     opacity: 70%;
+  }
+
+  .todolist {
+    background-color: white;
+    font-size: 1.3em;
+    border-radius: 24px; 
+    margin: 2em;
+  }
+
+  .todoinput{
+    margin: 1em auto;
+    padding: 2em, 1.5em;  
+    border-radius: .5em;
+    font-size: 1.3em; 
+  }
+
+  .addbtn{
+    cursor: pointer;
+    border-radius: 24px;    
+    font-size: 1.3em;
+    padding: .5em 2em;
+    border-color: black;
+    background-color:white;
+    color: black;
+  }
+
+  .delbtn{
+    cursor: pointer;
+    border-radius: 2.5em; 
+    font-size: .8em;
+    border-color: red;
+    color:white; 
+    background-color: red;
+    margin: .5em;
+  }
+
+  .tiplist{
+    background-color: white;
+    margin: 1em;
+    font-size: 1.3em;
+    line-height: 1.7em;
+    border-radius: .8em;
+    padding: 1em;
+  }
+
+  .remtitle{
+    font-size: 3.5em;
+    background-color: rgb(247, 246, 242);
+    padding: .6em, .3em;
+    margin: .6em;
+    
+    border-radius: 2em;
   }
