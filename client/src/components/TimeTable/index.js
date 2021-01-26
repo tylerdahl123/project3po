@@ -124,8 +124,12 @@ console.log(deleteEvent);
           onEventDrop={this.onEventDrop}
           onEventResize={this.onEventResize}
           resizable
+
           onSelectEvent = {event => this.onSelectEvent(event)} 
-          style={{ height: "100vh" }}
+  
+
+          style={{ height: "100vh", width: "50vw", margin: "auto" }}
+
           onSelectSlot={this.handleSelect}
           handleEventSave={this.handleEventSave}
           handleEventDelete={this.handleEventDelete}
