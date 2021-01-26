@@ -6,7 +6,18 @@ body {
   background-image: url(https://coolbackgrounds.io/images/backgrounds/white/white-unsplash-9d0375d2.jpg);
   background-attachment: fixed;
   background-position: center;
+  
 }
+/* 
+.bodydark{
+  background-color: rgb(41, 39, 39);
+  background-size: cover;  
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+} */
 
 code {
   font-family: 'Montserrat', sans-serif;
@@ -34,6 +45,13 @@ div[data-reactroot] {
   background-color: rgb(247, 246, 242);
 }
 
+/* .page-container-dark{
+  position: relative;
+  min-height: auto;
+  margin-top: 3em;
+  background-color: rgb(61, 61, 58);
+} */
+
 .content-wrap {
   padding-top: 1.5rem;
   padding-bottom: 2.5rem;    /* Footer height */
@@ -50,7 +68,7 @@ div[data-reactroot] {
   }
   
   .buttonText {
-    color: black;
+    color: rgb(231, 17, 17);
     font-weight: bold;
   }
 
