@@ -5,7 +5,7 @@ import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { getEvents } from "./fetch"
+import { getEvents } from "./fetch";
 import API from "../../utils/API";
 const userName = localStorage.getItem("email");
 // const userName = localStorage.getItem(userInfo.email)
@@ -49,6 +49,22 @@ export default class TimeTable extends Component {
 }
   
 
+onSelectEvent(Events) {
+  const r = window.confirm("Would you like to remove this event?")
+  if(r === true){
+ 
+    this.setState((previous, props) => {
+      const events = [...previous.events]
+      const idx = this.state.events.indexOf(Events)
+      events.splice(idx, 1);
+      return { events };
+    });
+  this.handleEventDelete();
+}
+
+
+  }
+ 
 
 handleSelect = ({ start, end }) => {
   const title = window.prompt('New Event name')
@@ -66,6 +82,8 @@ handleSelect = ({ start, end }) => {
         
     }, () => {
       this.handleEventSave();
+      this.handleEventDelete();
+     
     })
   
 }
@@ -82,7 +100,22 @@ console.log(newEvent);
   })
   this.setState({})
 }
-  
+
+
+handleEventDelete = (index) =>{
+  const event = this.state.events;
+
+const deleteEvent = event[event.length -1];
+console.log(deleteEvent);
+  API.deleteEvents({
+    userName: userName,
+    start: Date(deleteEvent.start),
+    end: Date(deleteEvent.end),
+    title: deleteEvent.title,
+    index: index,
+  })
+  this.setState({})
+}
 // getEvents = () => {
 //   API.getEvents(this.state.q)
 //     .then(res =>
@@ -99,12 +132,15 @@ console.log(newEvent);
 // };
 //loop through events where title of event matches the title of the selected event then replace the zeros with the index number
   onEventResize = (data) => {
+  
     const { start, end} = data;
-    const {title} = data.event
+    const {title} = data.event;
+    
+    
 console.log(title);
     this.setState((state) => {
-      state.events[0].start = start;
-      state.events[0].end = end;
+      state.events[145].start = start;
+      state.events[145].end = end;
      
       return { events: [...state.events] };
     });
@@ -129,7 +165,7 @@ console.log(title);
   render() {
     return (
       <div className="TimeTable">
-        <DnDCalendar
+        <Calendar
         selectable={true}
           defaultDate={moment().toDate()}
           defaultView="day"
@@ -138,9 +174,11 @@ console.log(title);
           onEventDrop={this.onEventDrop}
           onEventResize={this.onEventResize}
           resizable
+          onSelectEvent = {event => this.onSelectEvent(event)} 
           style={{ height: "100vh" }}
           onSelectSlot={this.handleSelect}
           handleEventSave={this.handleEventSave}
+          handleEventDelete={this.handleEventDelete}
           step={.5}
           timeslots={10}
         />
