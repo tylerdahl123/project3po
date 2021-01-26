@@ -5,7 +5,7 @@ import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { getEvents } from "./fetch"
+import { getEvents } from "./fetch";
 import API from "../../utils/API";
 const userName = localStorage.getItem("email");
 // const userName = localStorage.getItem(userInfo.email)
@@ -32,7 +32,7 @@ export default class TimeTable extends Component {
       this.setState({ events },() => {
        API.getsavedEvents(userName).then(res => {
         const filteredEvents = res.data.map(item => {
-          return {title: item.title, start: new Date(item.start), end: new Date(item.end) }
+          return {title: item.title, start: new Date(item.start), end: new Date(item.end), id: item._id }
         })
 
 
@@ -49,23 +49,35 @@ export default class TimeTable extends Component {
 }
   
 
+onSelectEvent(event) {
+  const deleteWindow = window.confirm("Would you like to delete this item?")
+  if(deleteWindow === true){
+ 
+    this.setState((res, props) => {
+      const events = [...res.events]
+      const index = this.state.events.indexOf(event)
+      events.splice(index, 1);
+      return { events };
+    });
+  this.handleEventDelete();
+}
+
+
+  }
+ 
 
 handleSelect = ({ start, end }) => {
-  const title = window.prompt('New Event name')
+  const title = window.prompt('Add Event')
   if (title)
     this.setState({
       events: [
         ...this.state.events,
-        {
-          start,
-          end,
-          title,
-          
-        }, 
+        {start,end, title }, 
       ],
-        
     }, () => {
       this.handleEventSave();
+      this.handleEventDelete();
+     
     })
   
 }
@@ -82,54 +94,28 @@ console.log(newEvent);
   })
   this.setState({})
 }
+
+
+handleEventDelete = (index) =>{
+  const event = this.state.events;
+console.log(index);
+const deleteEvent = event[event.length -1];
+console.log(deleteEvent);
+  API.deleteEvents(deleteEvent.id)
+  .then (res =>{
+    console.log(res);
+  })
+  this.setState({})
+}
+
+ 
   
-// getEvents = () => {
-//   API.getEvents(this.state.q)
-//     .then(res =>
-//       this.setState({
-//         events: res.data
-//       })
-//     )
-//     .catch(() =>
-//       this.setState({
-//         events: [],
-//         message: "No New Books Found, Try a Different Query"
-//       })
-//     );
-// };
-//loop through events where title of event matches the title of the selected event then replace the zeros with the index number
-  onEventResize = (data) => {
-    const { start, end} = data;
-    const {title} = data.event
-console.log(title);
-    this.setState((state) => {
-      state.events[0].start = start;
-      state.events[0].end = end;
-     
-      return { events: [...state.events] };
-    });
-  };
-  // moveEvent({ event, start, end }) {
-  //   const { events } = this.state;
-
-  //   const idx = events.indexOf(event);
-  //   const updatedEvent = { ...event, start, end };
-
-  //   const nextEvents = [...events];
-  //   nextEvents.splice(idx, 1, updatedEvent);
-
-  //   this.setState({
-  //     events: nextEvents
-  //   });
-  // }
-  onEventDrop = (data) => {
-    console.log(data);
-  };
+  
  
   render() {
     return (
       <div className="TimeTable">
-        <DnDCalendar
+        <Calendar
         selectable={true}
           defaultDate={moment().toDate()}
           defaultView="day"
@@ -138,9 +124,15 @@ console.log(title);
           onEventDrop={this.onEventDrop}
           onEventResize={this.onEventResize}
           resizable
+
+          onSelectEvent = {event => this.onSelectEvent(event)} 
+  
+
           style={{ height: "100vh", width: "50vw", margin: "auto" }}
+
           onSelectSlot={this.handleSelect}
           handleEventSave={this.handleEventSave}
+          handleEventDelete={this.handleEventDelete}
           step={.5}
           timeslots={10}
         />

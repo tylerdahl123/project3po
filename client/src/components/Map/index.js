@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, TrafficLayer } from '@react-google-maps/api';
 const MapContainer = (props) => {
 
     console.log(props)
-    const GoogleAPI = process.env.REACT_APP_MY_ENV
+    const { REACT_APP_MY_ENV } = process.env
 
     const mapStyles = {        
     height: "40%",
@@ -19,7 +19,7 @@ console.log('trafficLayer: ', trafficLayer)
   }
   return (
      <LoadScript
-       googleMapsApiKey= {GoogleAPI}>
+       googleMapsApiKey={REACT_APP_MY_ENV} >
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}

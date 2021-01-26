@@ -11,7 +11,7 @@ function Weather(props) {
     const [now, setNow] = useState('');
     const [icon, setIcon] = useState('');
     const [weather, setWeather] = useState('');
-    const WeatherAPI = process.env.REACT_APP_WEATHER
+    const { REACT_APP_WEATHER } = process.env
     const newLat = props.loadLat
     const newLong = props.loadLong
     let iconNew
@@ -26,7 +26,7 @@ function Weather(props) {
 
         function weatherCall() {
         fetch(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${newLat}&lon=${newLong}&exclude=minutely&units=imperial&appid=${WeatherAPI}`
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${newLat}&lon=${newLong}&exclude=minutely&units=imperial&appid=${REACT_APP_WEATHER}`
         )
         .then(res=> res.json())
         .then(data=> {

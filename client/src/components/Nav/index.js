@@ -45,6 +45,7 @@ function NavNew () {
 
 
     return (
+
     <div>
 
       <Navbar bg="light" variant="light">
@@ -60,6 +61,7 @@ function NavNew () {
       </Navbar>
     </div>
      
+
     );
   }
 

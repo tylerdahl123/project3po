@@ -15,7 +15,11 @@ export default {
 
     getsavedEvents: function(userName){
       return axios.get("/api/events/" + userName)
-    }
+    },
+
+    deleteEvents: function(id) {
+      return axios.delete("/api/events/" + id);
+    },
   // AddEvents: function(calendarId, data) {
   //   return axios.post(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=<API_KEY_HERE>`, {headers: {
   //     'Content-Type': 'application/json',
