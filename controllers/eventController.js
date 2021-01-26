@@ -14,6 +14,7 @@ module.exports = {
       },
 
       remove: function(req, res) {
+        console.log(req.params.id);
         db.Event.findById(req.params.id)
           .then(dbEvent => dbEvent.remove())
           .then(dbEvent => res.json(dbEvent))

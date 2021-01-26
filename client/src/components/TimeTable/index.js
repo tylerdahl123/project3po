@@ -32,7 +32,7 @@ export default class TimeTable extends Component {
       this.setState({ events },() => {
        API.getsavedEvents(userName).then(res => {
         const filteredEvents = res.data.map(item => {
-          return {title: item.title, start: new Date(item.start), end: new Date(item.end) }
+          return {title: item.title, start: new Date(item.start), end: new Date(item.end), id: item._id }
         })
 
 
@@ -98,15 +98,12 @@ console.log(newEvent);
 
 handleEventDelete = (index) =>{
   const event = this.state.events;
-
+console.log(index);
 const deleteEvent = event[event.length -1];
 console.log(deleteEvent);
-  API.deleteEvents({
-    userName: userName,
-    start: Date(deleteEvent.start),
-    end: Date(deleteEvent.end),
-    title: deleteEvent.title,
-    index: index,
+  API.deleteEvents(deleteEvent.id)
+  .then (res =>{
+    console.log(res);
   })
   this.setState({})
 }
