@@ -49,13 +49,13 @@ export default class TimeTable extends Component {
 }
   
 
-onSelectEvent(Events) {
+onSelectEvent(event) {
   const deleteWindow = window.confirm("Would you like to delete this item?")
   if(deleteWindow === true){
  
     this.setState((res, props) => {
       const events = [...res.events]
-      const index = this.state.events.indexOf(Events)
+      const index = this.state.events.indexOf(event)
       events.splice(index, 1);
       return { events };
     });
@@ -72,14 +72,8 @@ handleSelect = ({ start, end }) => {
     this.setState({
       events: [
         ...this.state.events,
-        {
-          start,
-          end,
-          title,
-          
-        }, 
+        {start,end, title }, 
       ],
-        
     }, () => {
       this.handleEventSave();
       this.handleEventDelete();
@@ -119,9 +113,7 @@ console.log(deleteEvent);
 
  
   
-  onEventDrop = (data) => {
-    console.log(data);
-  };
+  
  
   render() {
     return (
