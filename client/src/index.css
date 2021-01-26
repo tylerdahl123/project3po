@@ -8,6 +8,12 @@ body {
   background-position: center;
   
 }
+.mainstyle {
+  width: 100vw;
+}
+.container {
+  width: 100vw;
+}
 /* 
 .bodydark{
   background-color: rgb(41, 39, 39);

@@ -11,4 +11,11 @@ router.route("/:userName")
 .get(eventController.findAll)
 
 
+
+router.route("/:id")
+
+.delete(eventController.remove)
+
+
+
 module.exports=router; 

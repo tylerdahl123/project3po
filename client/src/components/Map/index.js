@@ -7,8 +7,8 @@ const MapContainer = (props) => {
     const { REACT_APP_MY_ENV } = process.env
 
     const mapStyles = {        
-    height: "25vh",
-    width: "33%"};
+    height: "40%",
+    width: "25vw"};
   const defaultCenter = {
     lat: props.loadLat, 
     lng: props.loadLong

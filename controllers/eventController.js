@@ -13,6 +13,12 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
 
-
+      remove: function(req, res) {
+        console.log(req.params.id);
+        db.Event.findById(req.params.id)
+          .then(dbEvent => dbEvent.remove())
+          .then(dbEvent => res.json(dbEvent))
+          .catch(err => res.status(422).json(err));
+      }
 
 }
