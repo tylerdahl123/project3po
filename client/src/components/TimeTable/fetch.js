@@ -9,8 +9,7 @@ const CALENDAR_ID = localStorage.getItem("email");
 
 let GOOGLE_CALENDAR_URL = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${REACT_APP_GOOGLE_API_KEY}&singleEvents=true`;
 
-    export function getEvents(callback) {
-      console.log(GOOGLE_CALENDAR_URL);
+export function getEvents(callback) {
   request.get(GOOGLE_CALENDAR_URL).end((err, resp) => {
     if (!err) {
       const events = [];

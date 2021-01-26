@@ -4,7 +4,7 @@ import API from "../../utils/API"
 import MapContainer from "../../components/Map"
 import Weather from "../../components/Weather"
 
-function NewHome() {
+function NewHome(props) {
 
     const [lati, setLati] = useState(' ');
     const [long, setlong] = useState(' ');
@@ -30,7 +30,7 @@ function NewHome() {
     return(
     <div>
         <div>            
-           <h1> Welcome {localStorage.getItem('user')} </h1>
+           <h1> Welcome {localStorage.getItem('user')}! </h1>
         </div>  
         <MapContainer 
             loadLat = {lati}

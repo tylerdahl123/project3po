@@ -1,7 +1,6 @@
 import { asRoughSeconds, getSectionHasLiquidHeight } from "@fullcalendar/react";
 import React, { useState, useEffect } from "react"
 import {Card} from "react-bootstrap"
-import env from "react-dotenv";
 import "./style.css"
 
 function Weather(props) {
