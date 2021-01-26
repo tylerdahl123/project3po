@@ -50,13 +50,13 @@ export default class TimeTable extends Component {
   
 
 onSelectEvent(Events) {
-  const r = window.confirm("Would you like to remove this event?")
-  if(r === true){
+  const deleteWindow = window.confirm("Would you like to delete this item?")
+  if(deleteWindow === true){
  
-    this.setState((previous, props) => {
-      const events = [...previous.events]
-      const idx = this.state.events.indexOf(Events)
-      events.splice(idx, 1);
+    this.setState((res, props) => {
+      const events = [...res.events]
+      const index = this.state.events.indexOf(Events)
+      events.splice(index, 1);
       return { events };
     });
   this.handleEventDelete();
@@ -67,7 +67,7 @@ onSelectEvent(Events) {
  
 
 handleSelect = ({ start, end }) => {
-  const title = window.prompt('New Event name')
+  const title = window.prompt('Add Event')
   if (title)
     this.setState({
       events: [
@@ -116,48 +116,9 @@ console.log(deleteEvent);
   })
   this.setState({})
 }
-// getEvents = () => {
-//   API.getEvents(this.state.q)
-//     .then(res =>
-//       this.setState({
-//         events: res.data
-//       })
-//     )
-//     .catch(() =>
-//       this.setState({
-//         events: [],
-//         message: "No New Books Found, Try a Different Query"
-//       })
-//     );
-// };
-//loop through events where title of event matches the title of the selected event then replace the zeros with the index number
-  onEventResize = (data) => {
+
+ 
   
-    const { start, end} = data;
-    const {title} = data.event;
-    
-    
-console.log(title);
-    this.setState((state) => {
-      state.events[145].start = start;
-      state.events[145].end = end;
-     
-      return { events: [...state.events] };
-    });
-  };
-  // moveEvent({ event, start, end }) {
-  //   const { events } = this.state;
-
-  //   const idx = events.indexOf(event);
-  //   const updatedEvent = { ...event, start, end };
-
-  //   const nextEvents = [...events];
-  //   nextEvents.splice(idx, 1, updatedEvent);
-
-  //   this.setState({
-  //     events: nextEvents
-  //   });
-  // }
   onEventDrop = (data) => {
     console.log(data);
   };
