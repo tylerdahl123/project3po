@@ -1,22 +1,28 @@
-import { asRoughSeconds } from "@fullcalendar/react";
+import { asRoughSeconds, getSectionHasLiquidHeight } from "@fullcalendar/react";
 import React, { useState, useEffect } from "react"
+import {Card} from "react-bootstrap"
+import "./style.css"
 
 function Weather(props) {
 
-    const [mainTemp, setMainTemp] = useState('');
+    const [Hi, setHi] = useState('');
+    const [Lo, setLo] = useState('');
     const [description, setDescription] = useState('');
-    const [main, setMain] = useState('');
-    const [iconID, setIconID] = useState('');
-    const [lati, setLati] = useState({});
-    const [long, setlong] = useState({});
-    const [weather, setWeather] = useState({});
+    const [now, setNow] = useState('');
+    const [icon, setIcon] = useState('');
+    const [weather, setWeather] = useState('');
     const WeatherAPI = process.env.REACT_APP_WEATHER
     const newLat = props.loadLat
     const newLong = props.loadLong
+    let iconNew
+
+    console.log(props)
 
         useEffect(()=>{
-            weatherCall()
-        }, [props])
+            if(newLat !== " " && newLong !== " ") {
+                weatherCall()
+            }
+        }, [newLat, newLong])
 
         function weatherCall() {
         fetch(
@@ -26,16 +32,56 @@ function Weather(props) {
         .then(data=> {
             console.log(data)
             setWeather(data)
+            setNow(data.current.temp.toFixed(0))
+            setDescription(data.current.weather[0].main)
+            setHi(data.daily[0].temp.max.toFixed(0))
+            setLo(data.daily[0].temp.min.toFixed(0))
+            setIcon(data.daily[0].weather[0].main)
         })
-    }
+        }
+        if(icon === "Thunderstorm"){
+            iconNew = "fas fa-poo-storm"
+        }
+        if(icon === "Drizzle"){
+            iconNew = "fas fa-cloud-sun-rain"
+        }
+        if(icon === "Rain"){
+            iconNew = "fas fa-cloud-showers-heavy"
+        }
+        if(icon === "Snow"){
+            iconNew = "fas fa-snowflake"
+        }
+        if(icon === "Clear"){
+            iconNew = "fas fa-sun"
+        }
+        if(icon === "Clouds"){
+            iconNew = "fas fa-cloud"
+        }
 
-    console.log(weather)
+        return(
+                <div>
+          <div className="cardbody">
+              <h3>Today's Forecast</h3>
+            <div className="row">
+                <div className="col-4">
+                    Now: {description}
+                </div>
+                <div className="col-4">
+                    <Card.Title>{now}°F</Card.Title>
+                </div>
+                <div className ="col-4">
+                    Hi{Hi}°F Lo{Lo}°F
+                </div>
+            </div>
+            <div className="icon">
+                {icon}
+                <i className={iconNew}></i>
+            </div>
 
-    
-    return(
-        <div>
-            New Weather:
-        </div>
-    )
+          </div>
+
+                </div>
+            )
+
 }
 export default Weather
