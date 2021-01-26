@@ -4,11 +4,12 @@
     background-color:#e7e2dd;    
 }
 
-/* .text-center-dark{
+.text-center-dark{
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
     background-color:#424242; 
-} */
+    color: white;
+}
 
 .dropdown-basic-button {
     font-family: 'Montserrat', sans-serif;
@@ -23,12 +24,12 @@
     padding: 10px;
 }
 
-/* .dropdown-toggle-dark {
+.dropdown-toggle-dark {
     background-color:  rgb(80, 79, 76);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
     padding: 10px;
-} */
+}
 
 .dropdown-toggle.btn.btn-primary {
     padding: 20px;
