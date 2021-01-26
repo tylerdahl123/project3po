@@ -30,10 +30,17 @@ export default class TimeTable extends Component {
     
     getEvents(events => {
       this.setState({ events },() => {
-       API.getsavedEvents("tylerdahl123").then(res => {
-      const joined = this.state.events.concat(res.data)
-      this.setState({ events: joined })
-      console.log("HELLO");
+       API.getsavedEvents(userName).then(res => {
+        const filteredEvents = res.data.map(item => {
+          return {title: item.title, start: new Date(item.start), end: new Date(item.end) }
+        })
+
+
+      const joined = this.state.events.concat(filteredEvents)
+      this.setState({ events: joined },() =>{
+        console.log(this.state.events);
+      })
+      
        
   })
     });
@@ -68,7 +75,7 @@ handleEventSave = () =>{
 const newEvent = event[event.length -1];
 console.log(newEvent);
   API.saveEvent({
-    userName: "tylerdahl123",
+    userName: userName,
     start: new Date(newEvent.start),
     end: new Date(newEvent.end),
     title: newEvent.title
@@ -90,13 +97,15 @@ console.log(newEvent);
 //       })
 //     );
 // };
-
+//loop through events where title of event matches the title of the selected event then replace the zeros with the index number
   onEventResize = (data) => {
-    const { start, end } = data;
-
+    const { start, end} = data;
+    const {title} = data.event
+console.log(title);
     this.setState((state) => {
       state.events[0].start = start;
       state.events[0].end = end;
+     
       return { events: [...state.events] };
     });
   };
