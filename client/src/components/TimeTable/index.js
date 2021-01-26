@@ -30,7 +30,7 @@ export default class TimeTable extends Component {
     
     getEvents(events => {
       this.setState({ events },() => {
-       API.getsavedEvents("tylerdahl123").then(res => {
+       API.getsavedEvents("itsalexkelly").then(res => {
       const joined = this.state.events.concat(res.data)
       this.setState({ events: joined })
       console.log("HELLO");
