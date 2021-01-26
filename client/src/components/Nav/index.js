@@ -55,7 +55,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-lg color mb-2" id="color">
         <Link className="navbar-brand color " to="/">
-          The Calendar App
+          Early Bird
         </Link>
         <button
           onClick={this.toggleNav}
