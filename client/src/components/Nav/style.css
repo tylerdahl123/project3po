@@ -1,7 +1,12 @@
 .color{
-    background-color:#5d6874;
-   color:#f5f3f3;
+    background-color: rgb(247, 246, 242);
+   color:black;
 }
+
+/* .color2{
+    background-color:black;
+   color:rgb(247, 246, 242); 
+} */
 
 .nav-item{
     font-style: italic;

@@ -1,0 +1,15 @@
+.cardbody {
+    background-image: linear-gradient(white, rgb(26, 126, 233), rgb(26, 126, 233), rgb(26, 126, 233), white);
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    width: 18rem;
+}
+
+.mainTemp {
+    font-size: large;
+}
+
+.fas {
+    font-size: 50px;
+}

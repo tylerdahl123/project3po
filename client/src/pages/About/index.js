@@ -25,7 +25,7 @@ export default function About(){
                                     <div id="about-developers-text">
                                     <div className= "row">
 
-                                    <DevInfo DevPic={"https://image.shutterstock.com/image-vector/male-silhouette-avatar-profile-picture-260nw-199246382.jpg"} DevName={"Tyler Dahlgren"} DevFact={"I am a 25 year old software developer currently enrolled in the UCLA coding Bootcamp."} EmailDev={"mailto:dahlgren15@gmail.com"} DevEmail={"dahlgren15@gmail.com"} DevGit={"https://github.com/tylerdahl123"}/>
+                                    <DevInfo DevPic={"https://avatars.githubusercontent.com/u/71345539?s=460&u=a726dbdbfd9076fe93775d98e1e199af37980b85&v=4"} DevName={"Tyler Dahlgren"} DevFact={"I am a 25 year old software developer currently enrolled in the UCLA coding Bootcamp."} EmailDev={"mailto:dahlgren15@gmail.com"} DevEmail={"dahlgren15@gmail.com"} DevGit={"https://github.com/tylerdahl123"}/>
                                     <DevInfo DevPic={"https://avatars.githubusercontent.com/u/69021459?s=460&u=0864f5ffd1d6f54699f58544af63a9243375efc3&v=4"} DevName={"Alex Kelly"} DevFact={"Full Stack Web Developer, Lifelong Learner"} EmailDev={"mailto:itsalexkelly@gmail.com"} DevEmail={"itsalexkelly@gmail.com"} DevGit={"https://github.com/luvwitch"}/>
                                       
                                     </div>

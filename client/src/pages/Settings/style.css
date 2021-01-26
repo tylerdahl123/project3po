@@ -1,8 +1,14 @@
 .text-center {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
-    background-color:#bdbbb9;    
+    background-color:#e7e2dd;    
 }
+
+/* .text-center-dark{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2rem;
+    background-color:#424242; 
+} */
 
 .dropdown-basic-button {
     font-family: 'Montserrat', sans-serif;
@@ -11,12 +17,18 @@
 }
 
 .dropdown-toggle {
-    background-color: rgb(108, 121, 138);
-
+    background-color:  rgb(223, 221, 213);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2rem;
     padding: 10px;
 }
+
+/* .dropdown-toggle-dark {
+    background-color:  rgb(80, 79, 76);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2rem;
+    padding: 10px;
+} */
 
 .dropdown-toggle.btn.btn-primary {
     padding: 20px;
