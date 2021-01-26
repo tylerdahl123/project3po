@@ -138,7 +138,7 @@ console.log(title);
           onEventDrop={this.onEventDrop}
           onEventResize={this.onEventResize}
           resizable
-          style={{ height: "100vh" }}
+          style={{ height: "100vh", width: "50vw", margin: "auto" }}
           onSelectSlot={this.handleSelect}
           handleEventSave={this.handleEventSave}
           step={.5}
