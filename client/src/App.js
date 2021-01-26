@@ -13,18 +13,16 @@ import Settings from "./pages/Settings";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="mainstyle">
         <Nav />
         <Switch>
-          <Container>
             <Route exact path="/" component={Home} />            
             <Route path="/calendar" component={Cal} />
             <Route path="/settings" component={Settings} />    
             <Route path="/about" component={About} />      
-          </Container>
         </Switch>
         <Footer />        
-      </div>
+        </div>
     </Router>
   );
 }

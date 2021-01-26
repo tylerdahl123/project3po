@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Card, Header, Title, Text, Footer, Body, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Button, Card, Header, Title, Text, Footer, Body, Dropdown, DropdownButton, Container } from 'react-bootstrap';
 import "./style.css"
 import { Login }  from "../../components/Login.js";
 const Settings = () => {
@@ -15,7 +15,7 @@ const Settings = () => {
     return() => clearInterval(newDark)
   }
     return (
-      <div>
+      <div><Container>
         <Card className={newStyle}>
           <Card.Header>Customize</Card.Header>
           <Card.Body>
@@ -51,6 +51,7 @@ const Settings = () => {
             <Login />
           </Card.Body>
         </Card>
+        </Container>
       </div>
     )
 }

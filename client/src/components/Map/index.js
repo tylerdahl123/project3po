@@ -7,8 +7,8 @@ const MapContainer = (props) => {
     const GoogleAPI = process.env.REACT_APP_MY_ENV
 
     const mapStyles = {        
-    height: "25vh",
-    width: "33%"};
+    height: "40%",
+    width: "25vw"};
   const defaultCenter = {
     lat: props.loadLat, 
     lng: props.loadLong
