@@ -66,7 +66,7 @@ function Weather(props) {
                 <div className="col-4">
                     Now: {description}
                 </div>
-                <div className="col-4">
+                <div className="col-4 mainTemp">
                     <Card.Title>{now}°F</Card.Title>
                 </div>
                 <div className ="col-4">
@@ -74,7 +74,7 @@ function Weather(props) {
                 </div>
             </div>
             <div className="icon">
-                {icon}
+                {icon}<br/>
                 <i className={iconNew}></i>
             </div>
 
