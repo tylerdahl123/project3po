@@ -26,7 +26,7 @@ function Weather(props) {
 
         function weatherCall() {
         fetch(
-            `https://api.openweathermap.org/data/2.5/onecall?lat=${newLat}&lon=${newLong}&exclude=minutely&units=imperial&appid=${WeatherAPI}`
+            `https://api.openweathermap.org/data/2.5/onecall?lat=${newLat}&lon=${newLong}&exclude=minutely&units=imperial&appid=27ced6e243766e75bc0f2b9372546488`
         )
         .then(res=> res.json())
         .then(data=> {
