@@ -1,16 +1,11 @@
-body {
+/* body {
   background-color: rgb(243, 232, 232);
   background-size: cover;  
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .2rem;
-  background-image: url(https://coolbackgrounds.io/images/backgrounds/white/white-unsplash-9d0375d2.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  
 }
 .mainstyle {
-  width: 100vw;
-}
+} */
 .container {
   width: 100vw;
 }
