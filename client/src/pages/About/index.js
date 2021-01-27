@@ -1,13 +1,28 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Col, Row, Container} from "../../components/Grid";
 import "./style.css"
 import DevInfo from "../../components/DevInfo"
 
 export default function About(){
+
+    const [newStyle, setNewStyle] = useState({})
+
+    const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
+
+  useEffect(() => {
+  if(isLoggedIn) {
+    const newLight = setNewStyle("content-wrap lightish")
+    clearInterval(newLight)
+  }else{
+    const newDark = setNewStyle("content-wrap darkish")
+  clearInterval(newDark)
+  }
+}, [isLoggedIn])
+
     return(
+        <Container>
         <div className="page-container">
-            <div className="content-wrap">
-                <Container>
+            <div className={newStyle}>
                     <Row>
                         <Col size="md-12">
                         <h1>About Page</h1>
@@ -19,7 +34,7 @@ export default function About(){
                                 <br />
                                 <p> A lot of us struggle with time management. The goal of this application is to aid those in need of morestructure and guidance into managing their time, as well as, those who just simply want reminders to keepthemselves on track.</p>
                                 <br />      
-                            <div className="card">
+                            <div className="card" id="newColor">
                                 <h5 className="card-header">Meet the Creators!</h5>
                                 <div className="card-body">
                                     <div id="about-developers-text">
@@ -47,8 +62,9 @@ export default function About(){
                                 </div>
                         </Col>
                     </Row>
-                </Container>
+                
             </div>
         </div>
+        </Container>
     )
 }

@@ -4,3 +4,17 @@
     border-radius: 35px;
     float: center;
   }
+
+
+
+  .lightish{
+    background-color: white;
+  }
+
+  .darkish{
+    background-color: rgb(13, 17, 22);
+  }
+
+  #newColor {
+    color:black
+  }
