@@ -21,8 +21,7 @@ function App() {
             <Route path="/calendar" component={Cal} />
             <Route path="/settings" component={Settings} />   
             <Route path="/about" component={About} />  
-            <Route path="/reminders" component={TodoPage} />  
-          </Container>
+            <Route path="/reminders" component={TodoPage} />           
         </Switch>
         <Footer />        
         </div>
