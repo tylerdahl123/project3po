@@ -25,6 +25,8 @@ function NavNew () {
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
 
+    const login = (localStorage.getItem('login') === 'true');
+
     useEffect(() => {
     if(isLoggedIn) {
       body.removeAttribute("style")
@@ -48,22 +50,14 @@ function NavNew () {
     }
   }, [isLoggedIn])
 
-    // let showsettings;
+    let showReminders;
 
-    // if (isLoggedIn) {
-    //   showsettings = 
-    //   <li className="nav-item">      
-    //   <Link
-    //   onClick={this.toggleNav}
-    //   className={window.location.pathname === "/settings" ? "nav-link active" : "nav-link color"}
-    //   to="/settings"
-    //   >
-    //   Settings
-    //   </Link>   
-    // </li>   
-    // } else {
-    //   showsettings = ""
-    // }
+    if (login) {
+      showReminders =           
+      <Nav.Link href="/reminders"> Reminders </Nav.Link> 
+    } else {
+      showReminders = ""
+    }
 
 
     return (
@@ -74,8 +68,8 @@ function NavNew () {
         <Navbar.Brand href="/" >Early Bird</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/" >Home</Nav.Link>
-          <Nav.Link href="/calendar" >Calendar</Nav.Link>
-          <Nav.Link href="/about" >About</Nav.Link> 
+          <Nav.Link href="/about" >About</Nav.Link>
+          {showReminders} 
           <Login />
         </Nav>
        

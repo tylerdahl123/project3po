@@ -12,7 +12,7 @@ const clientId =
   });  
   
   const loginAlert=()=>{
-    if ( localStorage.getItem('login') === false){
+    if ( localStorage.getItem('login') === !localStorage.getItem('login') ){
       alert(
         `Login success! Welcome ${localStorage.getItem('user')}!`
       )
@@ -26,7 +26,7 @@ const clientId =
     localStorage.setItem('email', res.profileObj.email)
     console.log('Login Success: currentUser:', res.profileObj);
     loginAlert();
-    localStorage.setItem('login', true);   
+    localStorage.setItem('login', true);     
     refreshTokenSetup(res);
   };
 
@@ -45,16 +45,19 @@ const clientId =
   const onLogoutSuccess = (res) => {
     setLoginState({...loginState, 
       login: loginState.login=false});
-    localStorage.setItem('login', false);
+    localStorage.setItem('login', false);    
     console.log('Logged out Success');
-    alert('Logged out Successfully ✌');
+    alert('Logged out Successfully ✌!');
+    
   };
 
   const onLogoutFailure = () => {
     console.log('Logout failed.');
   };
 
-  const { signOut } = useGoogleLogout({
+  const refreshWindow=()=> {window.location.reload() };
+
+  const { signOut } =  useGoogleLogout({
     clientId,
     onLogoutSuccess,
     onLogoutFailure,
@@ -63,7 +66,7 @@ const clientId =
   function renderButton(){
     if (loginState.login === true){
         return (
-          <button onClick={signOut} className="logbutton">      
+          <button onClick={ signOut } className="logbutton">      
             <span className="buttonText">Logout</span>
           </button>
         );
@@ -74,8 +77,9 @@ const clientId =
         </button>
       )
     }
-  }    
+  }  
+
   return (
-    renderButton()    
-  );           
+    renderButton()   
+  )         
 };
