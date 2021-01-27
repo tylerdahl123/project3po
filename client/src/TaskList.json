@@ -1,11 +1,22 @@
 [  
-    {        
-        "task": "Use this to help remember the little things!"    
+    {    
+        "id": 1,   
+        "task": "grab switch for lunch break",
+        "complete": false    
     },
     {
-        "task": "Like prepping your meals!"    
+        "id": 2,
+        "task": "get laundry out of dryer",
+        "complete": false   
     },
     {
-        "task": "Or remembering to leave a little early to grab coffee before work!"    
+        "id":3,
+        "task": "GET GAS!!!!",
+        "complete":false    
+    },
+    {
+        "id":4,
+        "task":"get big money tech job 💰",
+        "complete":false
     }
 ]
