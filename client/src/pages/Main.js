@@ -47,7 +47,6 @@ export default function Main(){
                             <h5 className="hcolor"></h5>
                             <br/>
                             <br/>
-                            <Login />
                             <div className="spacing"></div>
                         </Col>
                         
@@ -62,7 +61,8 @@ export default function Main(){
                 <div className="columns">
                     <div>
                         <h2>Login</h2>
-                        <p>Login to be able to use this application across all your devices and never lose your schedule.(Mobile application coming soon.)</p>
+                        <p>Login to be able to use this application across all your devices and never lose your schedule.
+                            <br /> <br /> (Mobile application coming soon.)</p>
                     </div>
                 </div>
                 <div className="columns">
