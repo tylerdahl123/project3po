@@ -63,9 +63,9 @@ div[data-reactroot] {
     border-radius: 24px;    
     font-size: 1.5em;
     padding: .5em 2em;
-    border-color: transparent;
-    background-color:white; 
-    opacity: 30%;
+    border-color: white;
+    background-color:transparent; 
+    opacity: 75%;
     color: black;
   }
   
@@ -74,10 +74,9 @@ div[data-reactroot] {
     font-weight: bold;
   }
 
-  .logbutton:hover{
-    background-color:whitesmoke;    
+  .logbutton:hover{      
     font-size: 1.5em;
-    opacity: 70%;
+    opacity: 100%;
   }
 
   .todolist {

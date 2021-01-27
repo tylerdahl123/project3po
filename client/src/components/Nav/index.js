@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Button, Nav, Navbar, Form, FormControl} from "react-bootstrap"
+import { Login } from "./../Login"
 import "./style.css";
 
 function NavNew () {
@@ -70,12 +71,14 @@ function NavNew () {
     <div>
 
       <Navbar bg={newStyle} variant={newStyle}>
-        <Navbar.Brand href="/" >New App Name</Navbar.Brand>
+        <Navbar.Brand href="/" >Early Bird</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/" >Home</Nav.Link>
           <Nav.Link href="/calendar" >Calendar</Nav.Link>
-          <Nav.Link href="/about" >About</Nav.Link>
+          <Nav.Link href="/about" >About</Nav.Link> 
+          <Login />
         </Nav>
+       
         <Form inline>
         <Button variant="light" href="#" onClick={activateLight}>Light Mode</Button> <Button variant="dark" href="#" onClick={activateDark}>Dark Mode</Button>{' '}
         </Form>
