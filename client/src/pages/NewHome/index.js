@@ -47,17 +47,19 @@ function NewHome(props) {
            <h1> Welcome {localStorage.getItem('user')} </h1>
         </div> 
         <div className="row">
-          <div className="col-2">
+          <div className="col-1">
             
           </div>
         <div className="col-6">
             <TimeTable />
             </div>
+            <div className="col-1"></div>
         <div className="col-4" >
-        <MapContainer 
+        <MapContainer
             loadLat = {lati}
             loadLong = {long} />
-            <Weather 
+            <br /><br />
+            <Weather
             loadLat = {lati}
             loadLong = {long}/>
             </div>

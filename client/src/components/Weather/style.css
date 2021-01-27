@@ -3,7 +3,14 @@
     color: white;
     border-radius: 20px;
     padding: 5px;
-    width: 25vw;
+    width: 16vw;
+    margin: auto
+}
+
+.rain {
+    background-image: url('https://www.flaticon.com/svg/vstatic/svg/1146/1146858.svg?token=exp=1611764824~hmac=c7175d4a2fbbda1a3fc75c5801ee66d2');
+    background-attachment: fixed;
+    background-position: center
 }
 
 .mainTemp {
@@ -11,5 +18,5 @@
 }
 
 .fas {
-    font-size: 50px;
+    font-size: 64px;
 }
