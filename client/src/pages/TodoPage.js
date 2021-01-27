@@ -22,7 +22,6 @@ function TodoPage(){
   }
     
     return(
-        <div>
         <Container>
         <div className="remtitle">
             <p> Reminders and Tips </p>
@@ -68,8 +67,8 @@ function TodoPage(){
                 </Container>
             </div>  
         </div>
-        </Container>
-        </div>
+
+    </Container>
     )
 }
 

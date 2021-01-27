@@ -8,7 +8,7 @@ const MapContainer = (props) => {
 
     const mapStyles = {        
     height: "40%",
-    width: "25vw"};
+    width: "100%"};
   const defaultCenter = {
     lat: props.loadLat, 
     lng: props.loadLong

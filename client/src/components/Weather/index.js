@@ -2,6 +2,12 @@ import { asRoughSeconds, getSectionHasLiquidHeight } from "@fullcalendar/react";
 import React, { useState, useEffect } from "react"
 import {Card} from "react-bootstrap"
 import "./style.css"
+import Rain1 from "../../assets/rain.png"
+import Drizzle from "../../assets/drizzle.png"
+import Cloud from "../../assets/cloud.png"
+import Storm from "../../assets/storm.png"
+import Sun from "../../assets/sun.png"
+import Snow from "../../assets/snowman.png"
 
 function Weather(props) {
 
@@ -11,10 +17,16 @@ function Weather(props) {
     const [now, setNow] = useState('');
     const [icon, setIcon] = useState('');
     const [weather, setWeather] = useState('');
+    const [tomorrowHi, setTomorrowHi] = useState('');
+    const [tomorrowLo, setTomorrowLo] = useState('');
+    const [tomorrowIcon, setTomorrowIcon] = useState('');
+    const [humidity, setHumidity] = useState('')
+
     const { REACT_APP_WEATHER } = process.env
     const newLat = props.loadLat
     const newLong = props.loadLong
     let iconNew
+    let tomorrowIconNew
 
     console.log(props)
 
@@ -37,25 +49,47 @@ function Weather(props) {
             setHi(data.daily[0].temp.max.toFixed(0))
             setLo(data.daily[0].temp.min.toFixed(0))
             setIcon(data.daily[0].weather[0].main)
+            setTomorrowHi(data.daily[1].temp.max.toFixed(0))
+            setTomorrowLo(data.daily[1].temp.min.toFixed(0))
+            setTomorrowIcon(data.daily[1].weather[0].main)
+            setHumidity(data.daily[1].humidity)
         })
         }
         if(icon === "Thunderstorm"){
-            iconNew = "fas fa-poo-storm"
+            iconNew = Storm
         }
         if(icon === "Drizzle"){
-            iconNew = "fas fa-cloud-sun-rain"
+            iconNew = Drizzle
         }
         if(icon === "Rain"){
-            iconNew = "fas fa-cloud-showers-heavy"
+            iconNew = Rain1
         }
         if(icon === "Snow"){
-            iconNew = "fas fa-snowflake"
+            iconNew = Snow
         }
         if(icon === "Clear"){
-            iconNew = "fas fa-sun"
+            iconNew = Sun
         }
         if(icon === "Clouds"){
-            iconNew = "fas fa-cloud"
+            iconNew = Cloud
+        }
+        if(tomorrowIcon === "Thunderstorm"){
+            tomorrowIconNew = Storm
+        }
+        if(tomorrowIcon === "Drizzle"){
+            tomorrowIconNew = Drizzle
+        }
+        if(tomorrowIcon === "Rain"){
+            tomorrowIconNew = Rain1
+        }
+        if(tomorrowIcon === "Snow"){
+            tomorrowIconNew = Snow
+        }
+        if(tomorrowIcon === "Clear"){
+            tomorrowIconNew = Sun
+        }
+        if(tomorrowIcon === "Clouds"){
+            tomorrowIconNew = Cloud
         }
 
         return(
@@ -75,7 +109,28 @@ function Weather(props) {
             </div>
             <div className="icon">
                 {icon}<br/>
-                <i className={iconNew}></i>
+                <img src={iconNew}></img>
+            </div>
+
+          </div>
+          <br/>
+
+          <div className="cardbody col-6">
+              <h3>Tomorrow's Forecast</h3>
+            <div className="row">
+                <div className="col-4">
+                    Humidity {humidity}%
+                </div>
+                <div className="col-4 mainTemp">
+                    <h5>Hi{tomorrowHi}°F</h5>
+                </div>
+                <div className ="col-4">
+                <h5>Lo{tomorrowLo}°F</h5>
+                </div>
+            </div>
+            <div className="icon">
+                {tomorrowIcon}<br/>
+                <img src={tomorrowIconNew}></img>
             </div>
 
           </div>
