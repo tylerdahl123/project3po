@@ -9,11 +9,24 @@ function NewHome(props) {
 
     const [lati, setLati] = useState(' ');
     const [long, setlong] = useState(' ');
+    const [newStyle, setNewStyle] = useState({})
 
     useEffect(() => {
         loadLat()
         loadLong()
       }, [])
+
+  const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
+
+  useEffect(() => {
+  if(isLoggedIn) {
+    const newLight = setNewStyle("light")
+    clearInterval(newLight)
+  }else{
+    const newDark = setNewStyle("dark")
+  clearInterval(newDark)
+  }
+}, [isLoggedIn])
     
       const loadLat = () => {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -29,20 +42,21 @@ function NewHome(props) {
             }
 
     return(
-    <div>
+    <div className={newStyle}>
         <div>         
            <h1> Welcome {localStorage.getItem('user')} </h1>
         </div> 
         <div className="row">
-        <div className="col-3" >
+          <div className="col-2">
+            
+          </div>
+        <div className="col-6">
+            <TimeTable />
+            </div>
+        <div className="col-4" >
         <MapContainer 
             loadLat = {lati}
             loadLong = {long} />
-            </div>
-            <div className="col-6">
-            <TimeTable />
-            </div>
-            <div className="col-3">
             <Weather 
             loadLat = {lati}
             loadLong = {long}/>
