@@ -84,13 +84,16 @@ div[data-reactroot] {
     font-size: 1.3em;
     border-radius: 24px; 
     margin: 2em;
+    padding: .5em;
   }
 
   .todoinput{
-    margin: 1em auto;
+    margin: .5em;
+    margin-top: 0;
     padding: 2em, 1.5em;  
     border-radius: .5em;
     font-size: 1.3em; 
+    text-align: center;
   }
 
   .addbtn{
@@ -129,4 +132,15 @@ div[data-reactroot] {
     margin: .6em;
     
     border-radius: 2em;
+  }
+  .todo {
+    cursor: pointer;
+    margin: .5em;
+  }
+  .strike {
+    text-decoration: line-through;
+  }
+
+  .todoexplain{
+    font-size: 1.3em;
   }

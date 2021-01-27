@@ -1,21 +1,28 @@
-import React, {Component} from 'react';
+import React, {Component, useState, setState } from 'react';
 import {Container, Row, Col} from './../components/Grid';
+import tasks from "../TaskList.json";
+import ToDoList from "../components/ToDoList";
+import ToDoForm from '../components/ToDoForm';
 
-import AddTodo from "../components/AddTodo";
-import TodoList from "../components/TodoList";
+function TodoPage(){
 
-class TodoPage extends Component{
-    state = {
-        tasks: ['Use this to help remember the little things!', 'Like prepping your meals!', 'Or remembering to leave a little early to grab coffee before work!',]
-      };
+  const [ toDoList, setToDoList ] = useState(tasks);
 
-    handleSubmit = task => {
-        this.setState({tasks: [...this.state.tasks, task]});
-    }
+  const handleToggle = (id) => {
+    let mapped = toDoList.map(task => {
+      return task.id === Number(id) ? { ...task, complete: !task.complete } : { ...task};
+    });
+    setToDoList(mapped);
+  }
 
-    render(){
+  const addTask = (userInput ) => {
+    let newTask = [...toDoList];
+    newTask = [...newTask, { id: toDoList.length + 1, task: userInput, complete: false }];
+    setToDoList(newTask);
+  }
+    
     return(
-        <div>
+        <Container>
         <div className="remtitle">
             <p> Reminders and Tips </p>
         </div>
@@ -25,14 +32,18 @@ class TodoPage extends Component{
                     <Row>
                         <Col size="md-12">
                             <h1>To Do List</h1>
-                            <TodoList tasks={this.state.tasks} onDelete={this.handleDelete} />
+                            <br />
+                            <div className="todoexplain">
+                            Use this to help remember the little things!
+                            <br/>
+                            Like prepping your meals!
+                            <br/>
+                            Or remembering to leave a little early to grab coffee before work!
+                            </div>                                                        
+                            <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
+                            <ToDoForm addTask={addTask}/>                                                      
                         </Col>
-                    </Row>                      
-                    <Row>
-                        <Col size="md-12">
-                            <AddTodo onFormSubmit={this.handleSubmit} />
-                        </Col>
-                    </Row>
+                    </Row>                     
                     <br />
                     <br />
                     <Row>
@@ -48,7 +59,7 @@ class TodoPage extends Component{
                                     remember to leave a little bit earlier the next day or grab it on the way back from your event! No more worries!
                                     </p>
                                     <p>
-                                    Feels good to get organized, doesn't it? ;)
+                                    Feels good to get organized, doesn't it? 😉
                                 </p>
                             </div>
                         </Col>
@@ -56,9 +67,8 @@ class TodoPage extends Component{
                 </Container>
             </div>  
         </div>
-        </div>
+    </Container>
     )
-}
 }
 
 export default TodoPage;

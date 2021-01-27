@@ -23,9 +23,10 @@ export default function Main(){
   }, []);
 
         return(
-            <div className="page-container view">
-                <Container>
-
+            <div className="content-wrap"> 
+            <Container>
+                <div className="page-container view">
+               
                     <div className="size">
                         <br />
                         <br />
@@ -73,7 +74,8 @@ export default function Main(){
                 </div>
             </div>
             </Row>
-            </Container>
+            </div>       
+            </Container>            
         </div>
     )
 }
