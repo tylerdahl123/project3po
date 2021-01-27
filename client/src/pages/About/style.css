@@ -7,12 +7,20 @@
 
 
 
-  .lightish{
+  .light{
     background-color: white;
   }
 
-  .darkish{
+  .dark{
     background-color: rgb(13, 17, 22);
+  }
+
+  #light {
+    background-color: white;
+  }
+
+  #dark {
+    background-color: black;
   }
 
   #newColor {

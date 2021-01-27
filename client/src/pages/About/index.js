@@ -6,15 +6,17 @@ import DevInfo from "../../components/DevInfo"
 export default function About(){
 
     const [newStyle, setNewStyle] = useState({})
+    const [newerStyle, setNewerStyle] = useState({})
+    let newAuto = "new"
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
 
   useEffect(() => {
   if(isLoggedIn) {
-    const newLight = setNewStyle("content-wrap lightish")
+    const newLight = setNewStyle("content-wrap light")
     clearInterval(newLight)
   }else{
-    const newDark = setNewStyle("content-wrap darkish")
+    const newDark = setNewStyle("content-wrap dark")
   clearInterval(newDark)
   }
 }, [isLoggedIn])

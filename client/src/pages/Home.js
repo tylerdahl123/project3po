@@ -4,12 +4,11 @@ import NewHome from "./NewHome";
 
 export default function Home(){
 
-
     const renderMain = () =>{
         if (localStorage.getItem('login') === 'true'){
-            return <NewHome />
+            return<NewHome />
             } else {
-             return <Main />
+            return <Main />
           }
     }
 

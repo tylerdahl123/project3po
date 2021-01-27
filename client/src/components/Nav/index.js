@@ -35,11 +35,11 @@ function NavNew () {
       background-image:url('https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg');
       background-attachment:fixed;
       background-position:center;`)
+      
     }else{
       body.removeAttribute("style")
       body.setAttribute("style", `background-color:black;
       background-size:cover;
-      color:white;
       font-family:'Montserrat', sansSerif;
       letter-spacing:.2rem;
       background-image:url('https://coolbackgrounds.io/images/backgrounds/black/black-radial-gradient-bb05ed79.jpg');
@@ -48,23 +48,15 @@ function NavNew () {
     }
   }, [isLoggedIn])
 
-    // let showsettings;
-
-    // if (isLoggedIn) {
-    //   showsettings = 
-    //   <li className="nav-item">      
-    //   <Link
-    //   onClick={this.toggleNav}
-    //   className={window.location.pathname === "/settings" ? "nav-link active" : "nav-link color"}
-    //   to="/settings"
-    //   >
-    //   Settings
-    //   </Link>   
-    // </li>   
-    // } else {
-    //   showsettings = ""
-    // }
-
+  useEffect(() => {
+    if(isLoggedIn) {
+      const newLight = setNewStyle("light")
+      clearInterval(newLight)
+    }else{
+      const newDark = setNewStyle("dark")
+    clearInterval(newDark)
+    }
+  }, [isLoggedIn])
 
     return (
 
