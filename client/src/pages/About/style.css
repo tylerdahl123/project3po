@@ -8,19 +8,26 @@
 
 
   .light{
-    background-color: white;
+    color:black;
+  }
+  
+  .darker {
+    color: white;
   }
 
   .dark{
-    background-color: rgb(13, 17, 22);
+    background-color: rgb(24, 24, 24);
+    color: white
   }
 
   #light {
     background-color: white;
+    color:black
   }
 
   #dark {
-    background-color: black;
+    background-color: rgb(16, 16, 16);
+    color:white
   }
 
   #newColor {

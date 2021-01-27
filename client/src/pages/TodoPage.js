@@ -16,6 +16,7 @@ class TodoPage extends Component{
     render(){
     return(
         <div>
+        <Container>
         <div className="remtitle">
             <p> Reminders and Tips </p>
         </div>
@@ -56,6 +57,7 @@ class TodoPage extends Component{
                 </Container>
             </div>  
         </div>
+        </Container>
         </div>
     )
 }

@@ -15,12 +15,14 @@ function NavNew () {
     setLightMode({...lightMode, 
       lightOn: lightMode.lightOn=true});
       localStorage.setItem('lightOn', true);
+      window.location.reload(false)
   }
 
   const activateDark = e => {
     setLightMode({...lightMode, 
       lightOn: lightMode.lightOn=false});
       localStorage.setItem('lightOn', false); 
+      window.location.reload(false)
   }
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');

@@ -7,6 +7,24 @@ export default function Main(){
 
     const [seconds, setSeconds] = useState(0);
     const [secondsTwo, setSecondsTwo]= useState(0);
+    const [newStyle, setNewStyle] = useState({})
+    const [newerStyle, setNewerStyle] = useState({})
+
+    const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
+
+  useEffect(() => {
+  if(isLoggedIn) {
+    const newLight = setNewStyle("light")
+    clearInterval(newLight)
+    const newerLight = setNewerStyle("lighter")
+    clearInterval(newerLight)
+  }else{
+    const newDark = setNewStyle("dark")
+  clearInterval(newDark)
+  const newDarker = setNewerStyle("darker")
+  clearInterval(newDarker)
+  }
+}, [isLoggedIn])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,7 +69,7 @@ export default function Main(){
                         </Col>
                         
             {/* Places the 3 boxes at the bottom of the screen */}
-            <div className="md-12 boxes">
+            <div className="md-12 boxes" id={newStyle}>
                 <div className="columns">
                     <div>
                         <h2>Get Started</h2>

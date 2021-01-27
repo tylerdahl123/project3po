@@ -7,17 +7,20 @@ export default function About(){
 
     const [newStyle, setNewStyle] = useState({})
     const [newerStyle, setNewerStyle] = useState({})
-    let newAuto = "new"
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
 
   useEffect(() => {
   if(isLoggedIn) {
-    const newLight = setNewStyle("content-wrap light")
+    const newLight = setNewStyle("light")
     clearInterval(newLight)
+    const newerLight = setNewerStyle("lighter")
+    clearInterval(newerLight)
   }else{
-    const newDark = setNewStyle("content-wrap dark")
+    const newDark = setNewStyle("dark")
   clearInterval(newDark)
+  const newDarker = setNewerStyle("darker")
+  clearInterval(newDarker)
   }
 }, [isLoggedIn])
 
@@ -26,20 +29,17 @@ export default function About(){
         <div className="page-container">
             <div className={newStyle}>
                     <Row>
-                        <Col size="md-12">
+                        <div className="col-12" className={newerStyle}>
                         <h1>About Page</h1>
-                                <br />
-                                
-                                <br />
                                 <br />
                                 <p> This application is designed to allow the user to integrate tasks, appointments, reminders and more into a calendar. This calendar will then remind the user of the items input at a desired interval and also helpshow the user how much time needs to be allocated to accomplish that task on time.</p>
                                 <br />
                                 <p> A lot of us struggle with time management. The goal of this application is to aid those in need of morestructure and guidance into managing their time, as well as, those who just simply want reminders to keepthemselves on track.</p>
                                 <br />      
-                            <div className="card" id="newColor">
-                                <h5 className="card-header">Meet the Creators!</h5>
+                            <div className="card" className={newStyle} id="newColor">
+                                <h5 className="card-header" className={newerStyle}>Meet the Creators!</h5>
                                 <div className="card-body">
-                                    <div id="about-developers-text">
+                                    <div className={newStyle} id="about-developers-text">
                                     <div className= "row">
 
                                     <DevInfo DevPic={"https://avatars.githubusercontent.com/u/71345539?s=460&u=a726dbdbfd9076fe93775d98e1e199af37980b85&v=4"} DevName={"Tyler Dahlgren"} DevFact={"I am a 25 year old software developer currently enrolled in the UCLA coding Bootcamp."} EmailDev={"mailto:dahlgren15@gmail.com"} DevEmail={"dahlgren15@gmail.com"} DevGit={"https://github.com/tylerdahl123"}/>
@@ -62,7 +62,7 @@ export default function About(){
                                     </div>
                                 </div>
                                 </div>
-                        </Col>
+                        </div>
                     </Row>
                 
             </div>
