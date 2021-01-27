@@ -25,6 +25,8 @@ function NavNew () {
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
 
+    const login = (localStorage.getItem('login') === 'true');
+
     useEffect(() => {
     if(isLoggedIn) {
       body.removeAttribute("style")
@@ -48,6 +50,7 @@ function NavNew () {
     }
   }, [isLoggedIn])
 
+
   useEffect(() => {
     if(isLoggedIn) {
       const newLight = setNewStyle("light")
@@ -58,6 +61,17 @@ function NavNew () {
     }
   }, [isLoggedIn])
 
+    let showReminders;
+
+    if (login) {
+      showReminders =           
+      <Nav.Link href="/reminders"> Reminders </Nav.Link> 
+    } else {
+      showReminders = ""
+    }
+
+
+
     return (
 
     <div>
@@ -66,8 +80,8 @@ function NavNew () {
         <Navbar.Brand href="/" >Early Bird</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/" >Home</Nav.Link>
-          <Nav.Link href="/calendar" >Calendar</Nav.Link>
-          <Nav.Link href="/about" >About</Nav.Link> 
+          <Nav.Link href="/about" >About</Nav.Link>
+          {showReminders} 
           <Login />
         </Nav>
        
