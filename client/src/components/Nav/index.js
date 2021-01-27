@@ -15,12 +15,14 @@ function NavNew () {
     setLightMode({...lightMode, 
       lightOn: lightMode.lightOn=true});
       localStorage.setItem('lightOn', true);
+      window.location.reload(false)
   }
 
   const activateDark = e => {
     setLightMode({...lightMode, 
       lightOn: lightMode.lightOn=false});
       localStorage.setItem('lightOn', false); 
+      window.location.reload(false)
   }
 
     const isLoggedIn = (localStorage.getItem('lightOn') === 'true');
@@ -37,16 +39,27 @@ function NavNew () {
       background-image:url('https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg');
       background-attachment:fixed;
       background-position:center;`)
+      
     }else{
       body.removeAttribute("style")
       body.setAttribute("style", `background-color:black;
       background-size:cover;
-      color:white;
       font-family:'Montserrat', sansSerif;
       letter-spacing:.2rem;
       background-image:url('https://coolbackgrounds.io/images/backgrounds/black/black-radial-gradient-bb05ed79.jpg');
       background-attachment:fixed;
       background-position:center;`)
+    }
+  }, [isLoggedIn])
+
+
+  useEffect(() => {
+    if(isLoggedIn) {
+      const newLight = setNewStyle("light")
+      clearInterval(newLight)
+    }else{
+      const newDark = setNewStyle("dark")
+    clearInterval(newDark)
     }
   }, [isLoggedIn])
 
@@ -58,6 +71,7 @@ function NavNew () {
     } else {
       showReminders = ""
     }
+
 
 
     return (

@@ -7,12 +7,27 @@
 
 
 
-  .lightish{
-    background-color: white;
+  .light{
+    color:black;
+  }
+  
+  .darker {
+    color: white;
   }
 
-  .darkish{
-    background-color: rgb(13, 17, 22);
+  .dark{
+    background-color: rgb(24, 24, 24);
+    color: white
+  }
+
+  #light {
+    background-color: white;
+    color:black
+  }
+
+  #dark {
+    background-color: rgb(16, 16, 16);
+    color:white
   }
 
   #newColor {
