@@ -1,10 +1,12 @@
 import React, {Component, useState, setState } from 'react';
 import {Container, Row, Col} from './../components/Grid';
+
 import TaskInput from './../components/TodoComps/TaskInput';
 import List from './../components/TodoComps/List';
 import ListFooter from './../components/TodoComps/ListFooter';
 import {DataProvider} from './../components/TodoComps/DataProvider';
 import './../components/TodoComps/style.css';
+
 
 function TodoPage(){ 
     
