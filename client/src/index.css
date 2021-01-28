@@ -79,42 +79,6 @@ div[data-reactroot] {
     opacity: 100%;
   }
 
-  .todolist {
-    background-color: white;
-    font-size: 1.3em;
-    border-radius: 24px; 
-    margin: 2em;
-    padding: .5em;
-  }
-
-  .todoinput{
-    margin: .5em;
-    margin-top: 0;
-    padding: 2em, 1.5em;  
-    border-radius: .5em;
-    font-size: 1.3em; 
-    text-align: center;
-  }
-
-  .addbtn{
-    cursor: pointer;
-    border-radius: 24px;    
-    font-size: 1.3em;
-    padding: .5em 2em;
-    border-color: black;
-    background-color:white;
-    color: black;
-  }
-
-  .delbtn{
-    cursor: pointer;
-    border-radius: 2.5em; 
-    font-size: .8em;
-    border-color: red;
-    color:white; 
-    background-color: red;
-    margin: .5em;
-  }
 
   .tiplist{
     background-color: white;
@@ -132,15 +96,4 @@ div[data-reactroot] {
     margin: .6em;
     
     border-radius: 2em;
-  }
-  .todo {
-    cursor: pointer;
-    margin: .5em;
-  }
-  .strike {
-    text-decoration: line-through;
-  }
-
-  .todoexplain{
-    font-size: 1.3em;
-  }
+  }  
