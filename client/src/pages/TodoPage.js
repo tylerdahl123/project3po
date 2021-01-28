@@ -1,25 +1,14 @@
 import React, {Component, useState, setState } from 'react';
 import {Container, Row, Col} from './../components/Grid';
-import tasks from "../TaskList.json";
-import ToDoList from "../components/TodoList";
-import ToDoForm from '../components/ToDoForm';
 
-function TodoPage(){
+import TaskInput from './../components/TodoComps/TaskInput';
+import List from './../components/TodoComps/List';
+import ListFooter from './../components/TodoComps/ListFooter';
+import {DataProvider} from './../components/TodoComps/DataProvider';
+import './../components/TodoComps/style.css';
 
-  const [ toDoList, setToDoList ] = useState(tasks);
 
-  const handleToggle = (id) => {
-    let mapped = toDoList.map(task => {
-      return task.id === Number(id) ? { ...task, complete: !task.complete } : { ...task};
-    });
-    setToDoList(mapped);
-  }
-
-  const addTask = (userInput ) => {
-    let newTask = [...toDoList];
-    newTask = [...newTask, { id: toDoList.length + 1, task: userInput, complete: false }];
-    setToDoList(newTask);
-  }
+function TodoPage(){ 
     
     return(
         <Container>
@@ -34,18 +23,17 @@ function TodoPage(){
                             <h1>To Do List</h1>
                             <br />
                             <div className="todoexplain">
-                            Use this to help remember the little things!
-                            <br/>
-                            Like prepping your meals!
-                            <br/>
-                            Or remembering to leave a little early to grab coffee before work!
-                            </div>                                                        
-                            <ToDoList toDoList={toDoList} handleToggle={handleToggle} />
-                            <ToDoForm addTask={addTask}/>                                                      
+                                <DataProvider>
+                                    <div className="todoList">                                    
+                                        <TaskInput />
+                                        <List />
+                                        <ListFooter />
+                                    </div>
+                                </DataProvider>                           
+                            </div>                                                                                                            
                         </Col>
-                    </Row>                     
-                    <br />
-                    <br />
+                    </Row>                    
+                   
                     <Row>
                         <Col size="md-12">
                             <h1>Tips and Tricks!</h1>
