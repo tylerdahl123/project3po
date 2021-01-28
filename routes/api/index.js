@@ -1,6 +1,6 @@
 const path = require("path");
 const router = require("express").Router();
-const eventRoutes = require("./events");
+const eventRoutes = require("./Events");
 
 
 // Book routes
