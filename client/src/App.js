@@ -43,7 +43,7 @@ const darkMode = {
 
 // body.setAttribute("style", darkMode)
   return (
-    <Router>
+    <Router history={hashHistory}>
       <div className="mainstyle">
         <Nav />
         <Switch>
