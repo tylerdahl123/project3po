@@ -1,7 +1,7 @@
 import React, {Component, useState, setState } from 'react';
 import {Container, Row, Col} from './../components/Grid';
 import tasks from "../TaskList.json";
-import ToDoList from "../components/ToDoList";
+import ToDoList from "../components/TodoList";
 import ToDoForm from '../components/ToDoForm';
 
 function TodoPage(){

@@ -31,7 +31,8 @@ Heroku deployed application:
 
 ## Usage
 
-
+## Credits
+For this project we used React.js and React-big-calendar (https://github.com/jquense/react-big-calendar) along with google calendar and weather api.  
 
 ## Contact
 
