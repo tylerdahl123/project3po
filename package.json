@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "type": "core",
-  "version": "1.0.0",
   "root": "/usr/local/lib/node_modules/heroku",
   "name": "@heroku-cli/plugin-ci",
   "scripts": {
