@@ -48,10 +48,10 @@ export default function Main(){
                     <div className="size">
                         <br />
                         <br />
-                        Welcome!
+                       <h1 style={{color:"black"}}> Welcome! </h1>
                      </div>
                     <Row size="md-9">                    
-                        <Col size="md-12">
+                        <Col size="md-11">
                             <div>
                                 <br />
                                 <h3 className="hcolor">This website helps you stay on time!</h3>
