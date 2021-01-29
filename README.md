@@ -1,4 +1,4 @@
-# Time Wizard
+# Early Bird
 
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -16,23 +16,28 @@ themselves on track.
 ## Table of Contents
 
 * [Link](#link)
-* [Usage](#usage)
+* [Installation](#installation)
 * [Credits](#credits)
 * [Contact](#contact)
 * [License](#license)
 
 ## Link
 
-Heroku deployed application:
+Heroku deployed application: https://stormy-bayou-72071.herokuapp.com/
 
 ## Screenshots
-[!image] 1
-[!image] 2
+[!image](screenshots\2021-01-29(3).png)
+[!image](screenshots\2021-01-29(6).png)
+[!image](screenshots\2021-01-29(9).png)
 
-## Usage
+
+
+## Installation
+To clone the repo run  "git clone https://github.com/luvwitch/project3po" then in the command line interface run a "npm install" that should download all the dependencies necessary to run our application on a local machine. 
+
 
 ## Credits
-For the Apps front end we used React.js and React-big-calendar (https://github.com/jquense/react-big-calendar) along with Google calendar(https://developers.google.com/calendar) and maps (https://developers.google.com/maps) api. We also used the open weather map api for the weather widget portions (https://openweathermap.org/). We built our back end server using Mongo/Express.  
+For the Apps front end we used React.js and React-big-calendar (https://github.com/jquense/react-big-calendar) along with Google's calendar(https://developers.google.com/calendar) and map (https://developers.google.com/maps) api. We also used the open weather map api for the weather widget portions (https://openweathermap.org/). We built our back end server using MongoDB(https://www.mongodb.com/) and Express(https://expressjs.com/) along with the mongoose npm package(https://www.npmjs.com/package/mongoose).  We would also like to thank Bryan Swarthout and Wilson Lam for their support on knowledge, without them this project would be very differnt. 
 
 ## Contact
 
