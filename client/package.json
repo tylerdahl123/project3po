@@ -1,14 +1,8 @@
 {
   "name": "time-wizard",
+  "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
-  "type": "core",
-  "version": "1.0.0",
-  "description": "### Motivation",
-  "main": "server.js",
-  "root": "/usr/local/lib/node_modules/heroku",
-  "name": "@heroku-cli/plugin-ci",
-
   "dependencies": {
     "@fullcalendar/core": "^5.5.1",
     "@fullcalendar/daygrid": "^5.5.0",
@@ -31,7 +25,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
