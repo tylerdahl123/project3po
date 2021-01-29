@@ -26,9 +26,11 @@ themselves on track.
 Heroku deployed application: https://stormy-bayou-72071.herokuapp.com/
 
 ## Screenshots
-[!image](screenshots\2021-01-29(3).png)
-[!image](screenshots\2021-01-29(6).png)
-[!image](screenshots\2021-01-29(9).png)
+
+![Screenshot](screenshot\home.png)
+![Screenshot](screenshot\calendar.png)
+
+![image](screenshot\toDo.png)
 
 
 
