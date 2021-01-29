@@ -50,7 +50,7 @@ function NewHome(props) {
           <div className="col-1">
             
           </div>
-        <div className="col-6">
+        <div className="col-5">
             <TimeTable />
             </div>
             <div className="col-1"></div>
@@ -58,7 +58,7 @@ function NewHome(props) {
         <MapContainer
             loadLat = {lati}
             loadLong = {long} />
-            <br /><br />
+            <br />
             <Weather
             loadLat = {lati}
             loadLong = {long}/>
