@@ -44,7 +44,7 @@ function NewHome(props) {
     return(
     <div className={newStyle}>
         <div>         
-           <h1> Welcome {localStorage.getItem('user')} </h1>
+           <h1> Welcome {localStorage.getItem('user')}! </h1>
         </div> 
         <div className="row">
           <div className="col-1">
