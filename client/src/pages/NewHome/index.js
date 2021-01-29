@@ -44,13 +44,13 @@ function NewHome(props) {
     return(
     <div className={newStyle}>
         <div>         
-           <h1> Welcome {localStorage.getItem('user')} </h1>
+           <h1> Welcome {localStorage.getItem('user')}! </h1>
         </div> 
         <div className="row">
           <div className="col-1">
             
           </div>
-        <div className="col-6">
+        <div className="col-5">
             <TimeTable />
             </div>
             <div className="col-1"></div>
@@ -58,7 +58,7 @@ function NewHome(props) {
         <MapContainer
             loadLat = {lati}
             loadLong = {long} />
-            <br /><br />
+            <br />
             <Weather
             loadLat = {lati}
             loadLong = {long}/>

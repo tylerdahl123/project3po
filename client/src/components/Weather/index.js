@@ -94,7 +94,7 @@ function Weather(props) {
 
         return(
                 <div>
-          <div className="cardbody">
+          <div className="cardbody col-6">
               <h3>Today's Forecast</h3>
             <div className="row">
                 <div className="col-4">
@@ -116,7 +116,7 @@ function Weather(props) {
           <br/>
 
           <div className="cardbody col-6">
-              <h3>Tomorrow's Forecast</h3>
+              <h4>Tomorrow's Forecast</h4>
             <div className="row">
                 <div className="col-4">
                     Humidity {humidity}%
