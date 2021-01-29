@@ -66,13 +66,13 @@ const clientId =
   function renderButton(){
     if (loginState.login === true){
         return (
-          <button onClick={ signOut } className="logbutton">      
+          <button onClick={ signOut } className="logbutton" id="newlog">      
             <span className="buttonText">Logout</span>
           </button>
         );
     } else {
       return (
-        <button onClick={signIn} className="logbutton">
+        <button onClick={signIn} className="logbutton" id="newlog">
           <span className="buttonText">Login</span>
         </button>
       )

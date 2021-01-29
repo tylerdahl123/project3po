@@ -24,6 +24,14 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
+.logbutton {
+  opacity: 1;
+}
+
+#newlog {
+  opacity: 1;
+}
+
 * {
   box-sizing: border-box;
 }
