@@ -97,3 +97,7 @@ div[data-reactroot] {
     
     border-radius: 2em;
   }  
+
+  #newlogin {
+    opacity: 1
+  }
